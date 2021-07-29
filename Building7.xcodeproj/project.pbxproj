@@ -99,13 +99,11 @@
 		7FA957BF26B2887600FCA82D /* Building7 */ = {
 			isa = PBXGroup;
 			children = (
-				7FA957C026B2887600FCA82D /* AppDelegate.swift */,
-				7FA957C226B2887600FCA82D /* SceneDelegate.swift */,
+				7FA957F426B28F5200FCA82D /* Application */,
+				7FA957F626B28F7F00FCA82D /* View */,
+				7FA957F526B28F7000FCA82D /* Controller */,
 				7FA957C926B2887900FCA82D /* Assets.xcassets */,
-				7FA957CB26B2887900FCA82D /* LaunchScreen.storyboard */,
 				7FA957CE26B2887900FCA82D /* Info.plist */,
-				7FA957F026B28D6E00FCA82D /* LoginViewController.swift */,
-				7FA957F226B28D7A00FCA82D /* Login.storyboard */,
 			);
 			path = Building7;
 			sourceTree = "<group>";
@@ -126,6 +124,32 @@
 				7FA957E426B2887900FCA82D /* Info.plist */,
 			);
 			path = Building7UITests;
+			sourceTree = "<group>";
+		};
+		7FA957F426B28F5200FCA82D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7FA957C026B2887600FCA82D /* AppDelegate.swift */,
+				7FA957C226B2887600FCA82D /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7FA957F526B28F7000FCA82D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7FA957F026B28D6E00FCA82D /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7FA957F626B28F7F00FCA82D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FA957CB26B2887900FCA82D /* LaunchScreen.storyboard */,
+				7FA957F226B28D7A00FCA82D /* Login.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
