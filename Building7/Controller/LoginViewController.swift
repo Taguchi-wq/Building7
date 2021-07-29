@@ -51,7 +51,13 @@ class LoginViewController: UIViewController {
     // MARK: - @IBActions
     /// ログインボタンを押した時の処理
     @IBAction private func tappedLoginButton(_ sender: UIButton) {
-        
+        guard let password = inputCodeTextField.text else { return }
+        Auth().login(password) {
+            print("ログイン")
+        } failure: {
+            Alert.presentIncorrectPassword(on: self)
+        }
+
     }
     
 }
