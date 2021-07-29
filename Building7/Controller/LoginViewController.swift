@@ -29,12 +29,14 @@ class LoginViewController: UIViewController {
     /// UIButtonの設定をする
     /// - Parameter button: 設定するUIButton
     private func setupButton(_ button: UIButton) {
+        button.isEnabled          = false
         button.layer.cornerRadius = 8
     }
     
     /// UITextFieldの設定をする
     /// - Parameter textField: 設定するUITextField
     private func setupTextField(_ textField: UITextField) {
+        textField.delegate           = self
         textField.layer.borderWidth  = 1
         textField.layer.cornerRadius = 8
         textField.layer.borderColor  = UIColor.black.withAlphaComponent(0.3).cgColor
@@ -45,6 +47,22 @@ class LoginViewController: UIViewController {
     /// ログインボタンを押した時の処理
     @IBAction private func tappedLoginButton(_ sender: UIButton) {
         
+    }
+    
+}
+
+
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    
+    /// textFieldに文字が入力されたタイミングで呼ばれる
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let inputCodeTextFieldIsEmpty = inputCodeTextField.text?.isEmpty ?? false
+        if inputCodeTextFieldIsEmpty {
+            loginButton.notEnabled()
+        } else {
+            loginButton.enabled()
+        }
     }
     
 }
