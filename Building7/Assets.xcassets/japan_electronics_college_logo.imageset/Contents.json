@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "japan_electronics_college_logo.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
