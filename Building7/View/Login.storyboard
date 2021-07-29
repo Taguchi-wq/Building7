@@ -31,7 +31,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="twS-iB-Qll"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2a-jF-xSU">
                                                 <rect key="frame" x="0.0" y="92" width="314" height="60"/>

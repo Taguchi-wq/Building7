@@ -24,6 +24,11 @@ class LoginViewController: UIViewController {
         setupTextField(inputCodeTextField)
     }
     
+    /// 画面をタップした時の処理
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     
     // MARK: - Private Func
     /// UIButtonの設定をする
@@ -63,6 +68,10 @@ extension LoginViewController: UITextFieldDelegate {
         } else {
             loginButton.enabled()
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
     
 }
