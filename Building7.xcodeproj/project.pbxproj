@@ -19,6 +19,9 @@
 		7FA957F326B28D7A00FCA82D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA957F226B28D7A00FCA82D /* Login.storyboard */; };
 		7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2826B2BCBC00738E81 /* Alert.swift */; };
 		7FE59E2B26B30F2500738E81 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2A26B30F2500738E81 /* Auth.swift */; };
+		7FE59E2D26B3153800738E81 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE59E2C26B3153800738E81 /* Home.storyboard */; };
+		7FE59E2F26B3154A00738E81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2E26B3154A00738E81 /* HomeViewController.swift */; };
+		7FE59E3226B315BF00738E81 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E3126B315BF00738E81 /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		7FA957F226B28D7A00FCA82D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7FE59E2826B2BCBC00738E81 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7FE59E2A26B30F2500738E81 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		7FE59E2C26B3153800738E81 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7FE59E2E26B3154A00738E81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7FE59E3126B315BF00738E81 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 			children = (
 				7FA957F426B28F5200FCA82D /* Application */,
 				7F82E0AC26B2AB2600EFF77D /* Utility */,
+				7FE59E3026B315AE00738E81 /* Protocol */,
 				7F82E0AF26B2ACCA00EFF77D /* Extension */,
 				7FE59E2526B2B7DB00738E81 /* Model */,
 				7FA957F626B28F7F00FCA82D /* View */,
@@ -167,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA957F026B28D6E00FCA82D /* LoginViewController.swift */,
+				7FE59E2E26B3154A00738E81 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			children = (
 				7FA957CB26B2887900FCA82D /* LaunchScreen.storyboard */,
 				7FA957F226B28D7A00FCA82D /* Login.storyboard */,
+				7FE59E2C26B3153800738E81 /* Home.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +195,14 @@
 				7FE59E2A26B30F2500738E81 /* Auth.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7FE59E3026B315AE00738E81 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				7FE59E3126B315BF00738E81 /* Reusable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +311,7 @@
 				7FA957CD26B2887900FCA82D /* LaunchScreen.storyboard in Resources */,
 				7FA957CA26B2887900FCA82D /* Assets.xcassets in Resources */,
 				7FA957F326B28D7A00FCA82D /* Login.storyboard in Resources */,
+				7FE59E2D26B3153800738E81 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +339,8 @@
 				7FA957F126B28D6E00FCA82D /* LoginViewController.swift in Sources */,
 				7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */,
 				7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */,
+				7FE59E3226B315BF00738E81 /* Reusable.swift in Sources */,
+				7FE59E2F26B3154A00738E81 /* HomeViewController.swift in Sources */,
 				7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */,
 				7FA957C326B2887600FCA82D /* SceneDelegate.swift in Sources */,
 				7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */,

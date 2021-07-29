@@ -47,13 +47,19 @@ class LoginViewController: UIViewController {
         textField.layer.borderColor  = UIColor.black.withAlphaComponent(0.3).cgColor
     }
     
+    /// HomeViewControllerに遷移する
+    private func transitionToHomeVC() {
+        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: HomeViewController.reuseIdentifier) as? HomeViewController else { return }
+        navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
     
     // MARK: - @IBActions
     /// ログインボタンを押した時の処理
     @IBAction private func tappedLoginButton(_ sender: UIButton) {
         guard let password = inputCodeTextField.text else { return }
         Auth().login(password) {
-            print("ログイン")
+            transitionToHomeVC()
         } failure: {
             Alert.presentIncorrectPassword(on: self)
         }
