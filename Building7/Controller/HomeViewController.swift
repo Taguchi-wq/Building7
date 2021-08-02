@@ -35,8 +35,7 @@ class HomeViewController: UIViewController {
     /// - Parameter collectionView: 設定するUICollectionView
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: DepartmentCell.reuseIdentifier, bundle: nil),
-                                forCellWithReuseIdentifier: DepartmentCell.reuseIdentifier)
+        collectionView.registerFromNib(type: DepartmentCell.self)
     }
     
 }
@@ -55,7 +54,3 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
 }
-
-
-// MARK: - Reusable
-extension HomeViewController: Reusable {}

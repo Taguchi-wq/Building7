@@ -94,7 +94,3 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
 }
-
-
-// MARK: - Reusable
-extension LoginViewController: Reusable {}

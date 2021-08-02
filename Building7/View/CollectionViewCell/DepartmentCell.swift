@@ -15,7 +15,3 @@ class DepartmentCell: UICollectionViewCell {
     }
 
 }
-
-
-// MARK: - Reusable
-extension DepartmentCell: Reusable {}
