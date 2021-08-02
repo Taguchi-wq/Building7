@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         
         setupButton(loginButton)
         setupTextField(inputCodeTextField)
+        setupNavigationBar()
     }
     
     /// 画面をタップした時の処理
@@ -47,11 +48,29 @@ class LoginViewController: UIViewController {
         textField.layer.borderColor  = UIColor.black.withAlphaComponent(0.3).cgColor
     }
     
+    /// NavigationBarの設定をする
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    /// HomeViewControllerに遷移する
+    private func transitionToHomeVC() {
+        let navigationVC = storyboard?.instantiateViewController(withIdentifier: HomeViewController.reuseIdentifier) as! UINavigationController
+        let homeVC = navigationVC.topViewController as! HomeViewController
+        navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
     
     // MARK: - @IBActions
     /// ログインボタンを押した時の処理
     @IBAction private func tappedLoginButton(_ sender: UIButton) {
-        
+        guard let password = inputCodeTextField.text else { return }
+        Auth.shared.login(password) {
+            transitionToHomeVC()
+        } failure: {
+            Alert.presentIncorrectPassword(on: self)
+        }
+
     }
     
 }
@@ -75,3 +94,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
 }
+
+
+// MARK: - Reusable
+extension LoginViewController: Reusable {}
