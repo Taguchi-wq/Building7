@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
     /// ログインボタンを押した時の処理
     @IBAction private func tappedLoginButton(_ sender: UIButton) {
         guard let password = inputCodeTextField.text else { return }
-        Auth().login(password) {
+        Auth.shared.login(password) {
             transitionToHomeVC()
         } failure: {
             Alert.presentIncorrectPassword(on: self)
@@ -87,3 +87,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
 }
+
+
+// MARK: - Reusable
+extension LoginViewController: Reusable {}
