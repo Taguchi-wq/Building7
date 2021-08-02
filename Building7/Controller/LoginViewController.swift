@@ -49,7 +49,8 @@ class LoginViewController: UIViewController {
     
     /// HomeViewControllerに遷移する
     private func transitionToHomeVC() {
-        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: HomeViewController.reuseIdentifier) as? HomeViewController else { return }
+        let navigationVC = storyboard?.instantiateViewController(withIdentifier: HomeViewController.reuseIdentifier) as! UINavigationController
+        let homeVC = navigationVC.topViewController as! HomeViewController
         navigationController?.pushViewController(homeVC, animated: true)
     }
     

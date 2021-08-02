@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="Building7" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="LoginViewController" customModule="Building7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,9 +85,10 @@
         <!--Navigation Controller-->
         <scene sceneID="No0-f8-pyu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="VHC-Lf-EE4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="VHC-Lf-EE4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RX4-Gg-wNL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -11,6 +11,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationBar()
+    }
+    
+    
+    // MARK: - Private Funcs
+    /// NavigationBarの設定をする
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesBackButton                         = true
     }
     
 }
