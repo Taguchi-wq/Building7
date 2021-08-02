@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     // MARK: - Private Funcs
     /// NavigationBarの設定をする
     private func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden           = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesBackButton                         = true
     }
