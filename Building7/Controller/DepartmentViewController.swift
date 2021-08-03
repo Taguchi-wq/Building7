@@ -9,6 +9,12 @@ import UIKit
 
 class DepartmentViewController: UIViewController {
 
+    // MARK: - @IBOutlets
+    /// 学科の詳細を表示するUICollectionView
+    @IBOutlet private weak var departmentCollectionView: UICollectionView!
+    
+    
+    // MARK: - Override Funcs
     override func viewDidLoad() {
         super.viewDidLoad()
     }
