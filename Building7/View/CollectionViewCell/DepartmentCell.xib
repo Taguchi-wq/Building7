@@ -44,6 +44,10 @@
                 <constraint firstAttribute="bottom" secondItem="8nL-vy-1Oj" secondAttribute="bottom" id="lET-y2-nty"/>
             </constraints>
             <size key="customSize" width="310" height="199"/>
+            <connections>
+                <outlet property="contentsView" destination="8nL-vy-1Oj" id="b7N-yB-RP6"/>
+                <outlet property="departmentNameLabel" destination="xt7-nK-v3h" id="Uty-Hh-LM5"/>
+            </connections>
             <point key="canvasLocation" x="326.08695652173918" y="91.40625"/>
         </collectionViewCell>
     </objects>
