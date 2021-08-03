@@ -12,6 +12,8 @@
 		7F3E4C5026B7DD9E00FA9690 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */; };
 		7F3E4C5426B9439900FA9690 /* DepartmentHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5226B9439900FA9690 /* DepartmentHeder.swift */; };
 		7F3E4C5526B9439900FA9690 /* DepartmentHeder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5326B9439900FA9690 /* DepartmentHeder.xib */; };
+		7F3E4C5726B954EC00FA9690 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5626B954EC00FA9690 /* DepartmentViewController.swift */; };
+		7F3E4C5926B9550800FA9690 /* Department.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5826B9550800FA9690 /* Department.storyboard */; };
 		7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0AD26B2AB4F00EFF77D /* Color.swift */; };
 		7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */; };
 		7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957C026B2887600FCA82D /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		7F3E4C5226B9439900FA9690 /* DepartmentHeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentHeder.swift; sourceTree = "<group>"; };
 		7F3E4C5326B9439900FA9690 /* DepartmentHeder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentHeder.xib; sourceTree = "<group>"; };
+		7F3E4C5626B954EC00FA9690 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		7F3E4C5826B9550800FA9690 /* Department.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Department.storyboard; sourceTree = "<group>"; };
 		7F82E0AD26B2AB4F00EFF77D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7FA957BD26B2887600FCA82D /* Building7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Building7.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 				7FA957CB26B2887900FCA82D /* LaunchScreen.storyboard */,
 				7FA957F226B28D7A00FCA82D /* Login.storyboard */,
 				7FE59E2C26B3153800738E81 /* Home.storyboard */,
+				7F3E4C5826B9550800FA9690 /* Department.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			children = (
 				7FA957F026B28D6E00FCA82D /* LoginViewController.swift */,
 				7FE59E2E26B3154A00738E81 /* HomeViewController.swift */,
+				7F3E4C5626B954EC00FA9690 /* DepartmentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				7F3E4C4D26B7D70D00FA9690 /* DepartmentCell.xib in Resources */,
 				7FA957CD26B2887900FCA82D /* LaunchScreen.storyboard in Resources */,
 				7F3E4C5526B9439900FA9690 /* DepartmentHeder.xib in Resources */,
+				7F3E4C5926B9550800FA9690 /* Department.storyboard in Resources */,
 				7FA957CA26B2887900FCA82D /* Assets.xcassets in Resources */,
 				7FA957F326B28D7A00FCA82D /* Login.storyboard in Resources */,
 				7FE59E2D26B3153800738E81 /* Home.storyboard in Resources */,
@@ -382,6 +389,7 @@
 				7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */,
 				7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */,
 				7F3E4C5426B9439900FA9690 /* DepartmentHeder.swift in Sources */,
+				7F3E4C5726B954EC00FA9690 /* DepartmentViewController.swift in Sources */,
 				7FE59E3226B315BF00738E81 /* Reusable.swift in Sources */,
 				7FE59E2F26B3154A00738E81 /* HomeViewController.swift in Sources */,
 				7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */,
