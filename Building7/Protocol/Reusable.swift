@@ -16,3 +16,5 @@ extension Reusable {
         return String(describing: self)
     }
 }
+
+extension NSObject: Reusable {}
