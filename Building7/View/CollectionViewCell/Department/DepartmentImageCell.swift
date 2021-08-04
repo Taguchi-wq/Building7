@@ -8,10 +8,23 @@
 import UIKit
 
 class DepartmentImageCell: UICollectionViewCell {
-
+    
+    // MARK: - @IBOutlets
+    /// 戻るボタン
+    @IBOutlet private weak var backButton: UIButton!
+    
+    
+    // MARK: - Override Funcs
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupButton(backButton)
+    }
+    
+    
+    // MARK: - Private Funcs
+    private func setupButton(_ button: UIButton) {
+        button.layer.cornerRadius = 20
     }
 
 }

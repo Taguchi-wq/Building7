@@ -35,9 +35,16 @@ class HomeViewController: UIViewController {
     /// - Parameter collectionView: 設定するUICollectionView
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource           = self
+        collectionView.delegate             = self
         collectionView.collectionViewLayout = createHomeLayout()
         collectionView.registerCell(type: DepartmentCell.self)
         collectionView.registerReusableView(type: DepartmentHeder.self)
+    }
+    
+    /// 学科画面に遷移する
+    private func presentDepartmentViewController() {
+        guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
+        navigationController?.pushViewController(departmentVC, animated: true)
     }
     
 }
@@ -122,6 +129,16 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let departmentHeder = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DepartmentHeder.reuseIdentifier, for: indexPath) as! DepartmentHeder
         return departmentHeder
+    }
+    
+}
+
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presentDepartmentViewController()
     }
     
 }

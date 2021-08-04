@@ -50,11 +50,22 @@
                     <navigationItem key="navigationItem" title="7号館" id="Wgw-Yd-tcQ"/>
                     <connections>
                         <outlet property="homeCollectionView" destination="Yv6-gB-5ys" id="M0T-4i-91f"/>
+                        <segue destination="C79-Nh-6xV" kind="show" id="mIP-A3-X6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1949.2753623188407" y="88.392857142857139"/>
+        </scene>
+        <!--Department-->
+        <scene sceneID="hDp-w5-3LS">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DepartmentViewController" storyboardName="Department" id="C79-Nh-6xV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zIn-KJ-6Pv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofC-CL-DlE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="99x-Dj-g0a">
