@@ -33,6 +33,9 @@
                                         <color key="tintColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="imageEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
                                         <state key="normal" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="tappedBackButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gFm-6q-6oA"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobile_phone_applications_department" translatesAutoresizingMaskIntoConstraints="NO" id="YRj-il-giX">
                                         <rect key="frame" x="90.5" y="63" width="234.5" height="234.5"/>

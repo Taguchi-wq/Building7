@@ -9,6 +9,11 @@ import UIKit
 
 class DepartmentImageCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    /// デリゲート
+    weak var delegate: DepartmentImageCellDelegate?
+    
+    
     // MARK: - @IBOutlets
     /// 戻るボタン
     @IBOutlet private weak var backButton: UIButton!
@@ -27,4 +32,11 @@ class DepartmentImageCell: UICollectionViewCell {
         button.layer.cornerRadius = 20
     }
 
+    
+    // MARK: - @IBActions
+    /// 戻るボタンを押した時の処理
+    @IBAction private func tappedBackButton(_ sender: UIButton) {
+        delegate?.back()
+    }
+    
 }

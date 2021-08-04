@@ -159,14 +159,10 @@ extension DepartmentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = DepartmentLayoutKind.allCases[section]
         switch section {
-        case .image:
-            return 1
-        case .name:
-            return 1
-        case .description:
-            return 1
-        case .teacher:
-            return 4
+        case .image:       return 1
+        case .name:        return 1
+        case .description: return 1
+        case .teacher:     return 4
         }
     }
     
@@ -175,6 +171,7 @@ extension DepartmentViewController: UICollectionViewDataSource {
         switch section {
         case .image:
             let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentImageCell.reuseIdentifier, for: indexPath) as! DepartmentImageCell
+            imageCell.delegate = self
             return imageCell
         case .name:
             let nameCell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentNameCell.reuseIdentifier, for: indexPath) as! DepartmentNameCell
@@ -201,4 +198,15 @@ extension DepartmentViewController: UICollectionViewDataSource {
         }
     }
     
+}
+
+
+// MARK: - DepartmentImageCellDelegate
+extension DepartmentViewController: DepartmentImageCellDelegate {
+    
+    /// 前の画面に戻る
+    func back() {
+        navigationController?.popViewController(animated: true)
+    }
+
 }
