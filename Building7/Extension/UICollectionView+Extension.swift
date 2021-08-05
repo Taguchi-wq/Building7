@@ -11,17 +11,29 @@ extension UICollectionView {
     
     // MARK: - Funcs
     /// UICollectionViewCellを登録する
-    func registerCell<T: UICollectionViewCell>(type: T.Type) {
+    func registerCell<T: UICollectionViewCell>(_ type: T.Type) {
         let nibName = type.reuseIdentifier
         let nib = UINib(nibName: nibName, bundle: nil)
         register(nib, forCellWithReuseIdentifier: nibName)
     }
     
     /// UICollectionReusableViewを登録する
-    func registerReusableView<T: UICollectionReusableView>(type: T.Type) {
+    func registerReusableView<T: UICollectionReusableView>(_ type: T.Type) {
         let nibName = type.reuseIdentifier
         let nib = UINib(nibName: nibName, bundle: nil)
         register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: nibName)
+    }
+    
+    /// UICollectionViewCellの再利用をする
+    func dequeueReusableCell<T: UICollectionViewCell>(_ type: T.Type, for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: type.reuseIdentifier, for: indexPath) as! T
+    }
+    
+    /// UICollectionReusableViewの再利用をする
+    func dequeueReusableView<T: UICollectionReusableView>(_ type: T.Type, for indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                withReuseIdentifier: type.reuseIdentifier,
+                                                for: indexPath) as! T
     }
     
 }

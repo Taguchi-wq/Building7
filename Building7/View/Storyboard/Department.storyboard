@@ -41,10 +41,10 @@
                         <viewLayoutGuide key="safeArea" id="UAS-fJ-Vv3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="HFL-ni-Uxq" secondAttribute="bottom" id="Jlf-ZZ-bXm"/>
-                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" id="iB8-m5-gAX"/>
-                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="trailing" secondItem="UAS-fJ-Vv3" secondAttribute="trailing" id="oxF-Tt-mt0"/>
-                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="yWq-PZ-eE5"/>
+                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="B3k-yw-RJY"/>
+                            <constraint firstAttribute="bottom" secondItem="HFL-ni-Uxq" secondAttribute="bottom" id="GyQ-Rk-8DX"/>
+                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" id="ZpB-7H-Kxh"/>
+                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="trailing" secondItem="UAS-fJ-Vv3" secondAttribute="trailing" id="j4k-Hd-Qox"/>
                         </constraints>
                     </view>
                     <connections>

@@ -8,6 +8,17 @@
 import UIKit
 
 class DepartmentViewController: UIViewController {
+    
+    // MARK: - Properties
+    /// 学科の画像のセクション
+    private var imageSection: DepartmentImageSection!
+    /// 学科の名前のセクション
+    private var nameSection: DepartmentNameSection!
+    /// 学科の説明のセクション
+    private var descriptionSection: DepartmentDescriptionSection!
+    /// 学科の先生のセクション
+    private var teacherSection: DepartmentTeacherSection!
+    
 
     // MARK: - @IBOutlets
     /// 学科の詳細を表示するUICollectionView
@@ -18,6 +29,7 @@ class DepartmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initialize()
         setupCollectionView(departmentCollectionView)
     }
     
@@ -25,6 +37,15 @@ class DepartmentViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupNavigationBar()
+    }
+    
+    
+    // MARK: - Initializer
+    private func initialize() {
+        imageSection       = DepartmentImageSection(items: 1, delegate: self)
+        nameSection        = DepartmentNameSection(items: 1)
+        descriptionSection = DepartmentDescriptionSection(items: 1)
+        teacherSection     = DepartmentTeacherSection(items: 4)
     }
     
     
@@ -39,11 +60,11 @@ class DepartmentViewController: UIViewController {
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource           = self
         collectionView.collectionViewLayout = createDepartmentLayout()
-        collectionView.registerCell(type: DepartmentImageCell.self)
-        collectionView.registerCell(type: DepartmentNameCell.self)
-        collectionView.registerCell(type: DepartmentDescriptionCell.self)
-        collectionView.registerCell(type: TeacherCell.self)
-        collectionView.registerReusableView(type: DepartmentSectionHeader.self)
+        collectionView.registerCell(DepartmentImageCell.self)
+        collectionView.registerCell(DepartmentNameCell.self)
+        collectionView.registerCell(DepartmentDescriptionCell.self)
+        collectionView.registerCell(TeacherCell.self)
+        collectionView.registerReusableView(DepartmentSectionHeader.self)
     }
 
 }
@@ -65,87 +86,17 @@ extension DepartmentViewController {
     private func createDepartmentLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let section = DepartmentLayoutKind.allCases[sectionIndex]
-            switch section {
-            case .image:       return self.imageSectionLayout()
-            case .name:        return self.nameSectionLayout()
-            case .description: return self.descriptionSectionLayout()
-            case .teacher:     return self.teacherSectionLayout()
+            let departmentLayoutKind = DepartmentLayoutKind.allCases[sectionIndex]
+            switch departmentLayoutKind {
+            case .image:       return self.imageSection.sectionLayout()
+            case .name:        return self.nameSection.sectionLayout()
+            case .description: return self.descriptionSection.sectionLayout()
+            case .teacher:     return self.teacherSection.sectionLayout()
             }
         }
         return layout
     }
-    
-    /// 学科の画像のレイアウト
-    /// - Returns: 学科の画像のレイアウト
-    private func imageSectionLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalHeight(1/3))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        return section
-    }
-    
-    /// 学科の名前のレイアウト
-    /// - Returns: 学科の名前のレイアウト
-    private func nameSectionLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .estimated(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .estimated(1/8))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 20, leading: 20, bottom: 60, trailing: 20)
-        return section
-    }
-    
-    /// 学科の説明のレイアウト
-    /// - Returns: 学科の説明のレイアウト
-    private func descriptionSectionLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .estimated(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .estimated(1/8))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-        let section = NSCollectionLayoutSection(group: group)
-        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                       heightDimension: .absolute(40))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
-                                                                        elementKind: UICollectionView.elementKindSectionHeader,
-                                                                        alignment: .top)
-        section.boundarySupplementaryItems = [sectionHeader]
-        section.contentInsets = .init(top: 10, leading: 20, bottom: 60, trailing: 20)
-        return section
-    }
-    
-    /// 先生のレイアウト
-    /// - Returns: 先生のレイアウト
-    private func teacherSectionLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4),
-                                               heightDimension: .fractionalHeight(1/7))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                       heightDimension: .absolute(40))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
-                                                                        elementKind: UICollectionView.elementKindSectionHeader,
-                                                                        alignment: .top)
-        section.boundarySupplementaryItems = [sectionHeader]
-        section.orthogonalScrollingBehavior = .continuous
-        section.interGroupSpacing = 16
-        section.contentInsets = .init(top: 10, leading: 20, bottom: 0, trailing: 20)
-        return section
-    }
-    
+
 }
 
 
@@ -157,44 +108,31 @@ extension DepartmentViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let section = DepartmentLayoutKind.allCases[section]
-        switch section {
-        case .image:       return 1
-        case .name:        return 1
-        case .description: return 1
-        case .teacher:     return 4
+        let departmentLayoutKind = DepartmentLayoutKind.allCases[section]
+        switch departmentLayoutKind {
+        case .image:       return imageSection.numberOfItems
+        case .name:        return nameSection.numberOfItems
+        case .description: return descriptionSection.numberOfItems
+        case .teacher:     return teacherSection.numberOfItems
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let section = DepartmentLayoutKind.allCases[indexPath.section]
-        switch section {
-        case .image:
-            let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentImageCell.reuseIdentifier, for: indexPath) as! DepartmentImageCell
-            imageCell.delegate = self
-            return imageCell
-        case .name:
-            let nameCell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentNameCell.reuseIdentifier, for: indexPath) as! DepartmentNameCell
-            return nameCell
-        case .description:
-            let descriptionCell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentDescriptionCell.reuseIdentifier, for: indexPath) as! DepartmentDescriptionCell
-            return descriptionCell
-        case .teacher:
-            let teacherCell = collectionView.dequeueReusableCell(withReuseIdentifier: TeacherCell.reuseIdentifier, for: indexPath) as! TeacherCell
-            return teacherCell
+        let departmentLayoutKind = DepartmentLayoutKind.allCases[indexPath.section]
+        switch departmentLayoutKind {
+        case .image:       return imageSection.createCell(collectionView, at: indexPath)
+        case .name:        return nameSection.createCell(collectionView, at: indexPath)
+        case .description: return descriptionSection.createCell(collectionView, at: indexPath)
+        case .teacher:     return teacherSection.createCell(collectionView, at: indexPath)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let section = DepartmentLayoutKind.allCases[indexPath.section]
-        if section == .description {
-            let departmentSectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DepartmentSectionHeader.reuseIdentifier, for: indexPath) as! DepartmentSectionHeader
-            departmentSectionHeader.initialize(sectionName: "学科説明")
-            return departmentSectionHeader
+        let departmentLayoutKind = DepartmentLayoutKind.allCases[indexPath.section]
+        if departmentLayoutKind == .description {
+            return descriptionSection.createHeader(collectionView, at: indexPath)
         } else {
-            let departmentSectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DepartmentSectionHeader.reuseIdentifier, for: indexPath) as! DepartmentSectionHeader
-            departmentSectionHeader.initialize(sectionName: "先生")
-            return departmentSectionHeader
+            return teacherSection.createHeader(collectionView, at: indexPath)
         }
     }
     
