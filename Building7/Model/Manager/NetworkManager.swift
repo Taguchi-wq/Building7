@@ -54,4 +54,16 @@ class NetworkManager {
         }
     }
     
+    /// 7号館のフロア情報を読み込む
+    func loadFloors(completion: @escaping (Result<[Floor], Error>) -> Void) {
+        load(.floorURL, type: Floor.self) { result in
+            switch result {
+            case .success(let floors):
+                completion(.success(floors))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
 }

@@ -9,6 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Properties
+    /// 7号館のフロア情報を格納する配列
+    private var floors: [Floor] = []
+    
+    
     // MARK: - @IBOutlets
     /// 学科を表示するUICollectionView
     @IBOutlet private weak var homeCollectionView: UICollectionView!
@@ -19,6 +24,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView(homeCollectionView)
+        appendFloors()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +56,24 @@ class HomeViewController: UIViewController {
     private func presentDepartmentViewController() {
         guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
         navigationController?.pushViewController(departmentVC, animated: true)
+    }
+    
+}
+
+
+// MARK: - API通信
+extension HomeViewController {
+    
+    /// 7号館のフロア情報を配列に格納する
+    private func appendFloors() {
+        NetworkManager.shared.loadFloors { result in
+            switch result {
+            case .success(let floors):
+                self.floors.append(contentsOf: floors)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }

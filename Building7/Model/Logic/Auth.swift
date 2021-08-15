@@ -12,7 +12,6 @@ class Auth {
     // MARK: - Initializer
     private init() {
         appendPassword()
-        print(#function)
     }
     
     
