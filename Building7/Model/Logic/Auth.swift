@@ -10,7 +10,10 @@ import Foundation
 class Auth {
     
     // MARK: - Initializer
-    private init() {}
+    private init() {
+        appendPassword()
+        print(#function)
+    }
     
     
     // MARK: - Static Properties
@@ -20,7 +23,7 @@ class Auth {
     
     // MARK: - Private Properties
     /// パスワード
-    private let password = "open2021"
+    private var password: [Password] = []
     
     
     // MARK: - Properties
@@ -44,11 +47,30 @@ class Auth {
     ///   - success: ログインに成功した時の処理
     ///   - failure: ログインに失敗した時の処理
     func login(_ password: String, success: (() -> ()), failure: (() -> ())) {
-        if self.password == password {
+        let code = self.password.first?.code
+        if code == password {
             setIsNotNewUser()
             success()
         } else {
             failure()
+        }
+    }
+    
+}
+
+
+// MARK: - API通信
+extension Auth {
+    
+    /// ログインパスワードをpassword配列に格納する
+    private func appendPassword() {
+        NetworkManager.shared.loadPassword { result in
+            switch result {
+            case .success(let password):
+                self.password.append(contentsOf: password)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
