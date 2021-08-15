@@ -9,17 +9,6 @@ import UIKit
 
 class DepartmentViewController: UIViewController {
     
-    // MARK: - Properties
-    /// 学科の画像のセクション
-    private var imageSection: DepartmentImageSection!
-    /// 学科の名前のセクション
-    private var nameSection: DepartmentNameSection!
-    /// 学科の説明のセクション
-    private var descriptionSection: DepartmentDescriptionSection!
-    /// 学科の先生のセクション
-    private var teacherSection: DepartmentTeacherSection!
-    
-
     // MARK: - @IBOutlets
     /// 学科の詳細を表示するUICollectionView
     @IBOutlet private weak var departmentCollectionView: UICollectionView!
@@ -29,7 +18,6 @@ class DepartmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initialize()
         setupCollectionView(departmentCollectionView)
     }
     
@@ -37,15 +25,6 @@ class DepartmentViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupNavigationBar()
-    }
-    
-    
-    // MARK: - Initializer
-    private func initialize() {
-        imageSection       = DepartmentImageSection(items: 1, delegate: self)
-        nameSection        = DepartmentNameSection(items: 1)
-        descriptionSection = DepartmentDescriptionSection(items: 1)
-        teacherSection     = DepartmentTeacherSection(items: 4)
     }
     
     
@@ -73,30 +52,145 @@ class DepartmentViewController: UIViewController {
 // MARK: - Layout
 extension DepartmentViewController {
     
-    // MARK: - Enums
     /// 学科画面のレイアウトのセクション
     private enum DepartmentLayoutKind: CaseIterable {
         case image, name, description, teacher
     }
     
-    
-    // MARK: - Private Funcs
-    /// 学科画面を作成
-    /// - Returns: 学科画面
+    /// 学科のレイアウトを作る
+    /// - Returns: 学科のレイアウト
     private func createDepartmentLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout {
+        let departmentLayout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             let departmentLayoutKind = DepartmentLayoutKind.allCases[sectionIndex]
             switch departmentLayoutKind {
-            case .image:       return self.imageSection.sectionLayout()
-            case .name:        return self.nameSection.sectionLayout()
-            case .description: return self.descriptionSection.sectionLayout()
-            case .teacher:     return self.teacherSection.sectionLayout()
+            case .image:       return self.imageSectionLayout()
+            case .name:        return self.nameSectionLayout()
+            case .description: return self.descriptionSectionLayout()
+            case .teacher:     return self.teacherSectionLayout()
             }
         }
-        return layout
+        return departmentLayout
     }
-
+    
+    /// 学科の画像のレイアウト
+    /// - Returns: 学科の画像のレイアウト
+    private func imageSectionLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1/3)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
+    }
+    
+    /// 学科の名前のレイアウト
+    /// - Returns: 学科の名前のレイアウト
+    private func nameSectionLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 8, leading: 20, bottom: 60, trailing: 20)
+        
+        return section
+    }
+    
+    /// 学科の説明のレイアウト
+    /// - Returns: 学科の説明のレイアウト
+    private func descriptionSectionLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1)
+        )
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: sectionHeaderSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.contentInsets = .init(top: 10, leading: 20, bottom: 60, trailing: 20)
+        
+        return section
+    }
+    
+    /// 先生のレイアウト
+    /// - Returns: 先生のレイアウト
+    private func teacherSectionLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1/4),
+            heightDimension: .fractionalHeight(1/7)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1)
+        )
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: sectionHeaderSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.orthogonalScrollingBehavior = .continuous
+        section.interGroupSpacing = 16
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 20)
+        
+        return section
+    }
+    
 }
 
 
@@ -110,29 +204,42 @@ extension DepartmentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let departmentLayoutKind = DepartmentLayoutKind.allCases[section]
         switch departmentLayoutKind {
-        case .image:       return imageSection.numberOfItems
-        case .name:        return nameSection.numberOfItems
-        case .description: return descriptionSection.numberOfItems
-        case .teacher:     return teacherSection.numberOfItems
+        case .image:       return 1
+        case .name:        return 1
+        case .description: return 1
+        case .teacher:     return 4
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let departmentLayoutKind = DepartmentLayoutKind.allCases[indexPath.section]
         switch departmentLayoutKind {
-        case .image:       return imageSection.createCell(collectionView, at: indexPath)
-        case .name:        return nameSection.createCell(collectionView, at: indexPath)
-        case .description: return descriptionSection.createCell(collectionView, at: indexPath)
-        case .teacher:     return teacherSection.createCell(collectionView, at: indexPath)
+        case .image:
+            let imageCell = collectionView.dequeueReusableCell(DepartmentImageCell.self, for: indexPath)
+            imageCell.delegate = self
+            return imageCell
+        case .name:
+            let nameCell = collectionView.dequeueReusableCell(DepartmentNameCell.self, for: indexPath)
+            return nameCell
+        case .description:
+            let descriptionCell = collectionView.dequeueReusableCell(DepartmentDescriptionCell.self, for: indexPath)
+            return descriptionCell
+        case .teacher:
+            let teacherCell = collectionView.dequeueReusableCell(TeacherCell.self, for: indexPath)
+            return teacherCell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let departmentLayoutKind = DepartmentLayoutKind.allCases[indexPath.section]
         if departmentLayoutKind == .description {
-            return descriptionSection.createHeader(collectionView, at: indexPath)
+            let descriptionSectionHeader = collectionView.dequeueReusableView(DepartmentSectionHeader.self, for: indexPath)
+            descriptionSectionHeader.initialize(sectionName: "学科説明")
+            return descriptionSectionHeader
         } else {
-            return teacherSection.createHeader(collectionView, at: indexPath)
+            let teacherSectionHeader = collectionView.dequeueReusableView(DepartmentSectionHeader.self, for: indexPath)
+            teacherSectionHeader.initialize(sectionName: "先生")
+            return teacherSectionHeader
         }
     }
     

@@ -55,8 +55,8 @@ class LoginViewController: UIViewController {
     
     /// HomeViewControllerに遷移する
     private func transitionToHomeVC() {
-        let navigationVC = storyboard?.instantiateViewController(withIdentifier: HomeViewController.reuseIdentifier) as! UINavigationController
-        let homeVC = navigationVC.topViewController as! HomeViewController
+        guard let navigationVC = storyboard?.instantiateViewController(withIdentifier: HomeViewController.reuseIdentifier) as? UINavigationController else { return }
+        guard let homeVC = navigationVC.topViewController as? HomeViewController else { return }
         navigationController?.pushViewController(homeVC, animated: true)
     }
     
@@ -70,7 +70,6 @@ class LoginViewController: UIViewController {
         } failure: {
             Alert.presentIncorrectPassword(on: self)
         }
-
     }
     
 }

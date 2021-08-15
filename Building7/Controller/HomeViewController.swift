@@ -9,11 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: - Properties
-    /// フロアのセクション
-    private var floorSection: FloorSection!
-    
-    
     // MARK: - @IBOutlets
     /// 学科を表示するUICollectionView
     @IBOutlet private weak var homeCollectionView: UICollectionView!
@@ -23,7 +18,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initialize()
         setupCollectionView(homeCollectionView)
     }
     
@@ -31,12 +25,6 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupNavigationBar()
-    }
-    
-    
-    // MARK: - Initializer
-    private func initialize() {
-        floorSection = FloorSection(items: 12)
     }
     
     
@@ -53,7 +41,7 @@ class HomeViewController: UIViewController {
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource           = self
         collectionView.delegate             = self
-        collectionView.collectionViewLayout = createHomeLayout()
+        collectionView.collectionViewLayout = createFloorLayout()
         collectionView.registerCell(DepartmentCell.self)
         collectionView.registerReusableView(DepartmentHeder.self)
     }
@@ -70,37 +58,71 @@ class HomeViewController: UIViewController {
 // MARK: - Layout
 extension HomeViewController {
     
-    // MARK: - Enums
     /// フロアのセクション
     private enum FloorsLayoutKind: CaseIterable {
         case floor10, floor9, floor8, floor7, floor6, floor5, floor4, floor3, floor2, floor1, floorB1, floorB2
     }
     
-    
     // MARK: - Private Funcs
     /// ホーム画面のレイアウトを作成
     /// - Returns: ホーム画面のレイアウト
-    private func createHomeLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout {
+    private func createFloorLayout() -> UICollectionViewLayout {
+        let floorLayout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let layout = self.floorSection.sectionLayout()
             let floorsLayoutKind = FloorsLayoutKind.allCases[sectionIndex]
             switch floorsLayoutKind {
-            case .floor10: return layout
-            case .floor9:  return layout
-            case .floor8:  return layout
-            case .floor7:  return layout
-            case .floor6:  return layout
-            case .floor5:  return layout
-            case .floor4:  return layout
-            case .floor3:  return layout
-            case .floor2:  return layout
-            case .floor1:  return layout
-            case .floorB1: return layout
-            case .floorB2: return layout
+            case .floor10: return self.floorSectionLayout()
+            case .floor9:  return self.floorSectionLayout()
+            case .floor8:  return self.floorSectionLayout()
+            case .floor7:  return self.floorSectionLayout()
+            case .floor6:  return self.floorSectionLayout()
+            case .floor5:  return self.floorSectionLayout()
+            case .floor4:  return self.floorSectionLayout()
+            case .floor3:  return self.floorSectionLayout()
+            case .floor2:  return self.floorSectionLayout()
+            case .floor1:  return self.floorSectionLayout()
+            case .floorB1: return self.floorSectionLayout()
+            case .floorB2: return self.floorSectionLayout()
             }
         }
-        return layout
+        return floorLayout
+    }
+    
+    /// フロアセクションのレイアウト
+    /// - Returns: フロアセクションのレイアウト
+    private func floorSectionLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(3/5),
+            heightDimension: .fractionalHeight(1/4)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(50)
+        )
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: sectionHeaderSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.orthogonalScrollingBehavior = .continuous
+        section.interGroupSpacing = 16
+        section.contentInsets = .init(top: 16, leading: 20, bottom: 16, trailing: 20)
+        
+        return section
     }
     
 }
@@ -114,15 +136,17 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return floorSection.numberOfItems
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return floorSection.createCell(collectionView, at: indexPath)
+        let departmentCell = collectionView.dequeueReusableCell(DepartmentCell.self, for: indexPath)
+        return departmentCell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return floorSection.createHeader(collectionView, at: indexPath)
+        let departmentHeder = collectionView.dequeueReusableView(DepartmentHeder.self, for: indexPath)
+        return departmentHeder
     }
     
 }
