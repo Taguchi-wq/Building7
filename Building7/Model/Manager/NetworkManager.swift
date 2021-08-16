@@ -34,7 +34,7 @@ class NetworkManager {
             
             do {
                 let typeObjects = try JSONDecoder().decode([T].self, from: data)
-                DispatchQueue.main.async { completion(.success(typeObjects)) }
+                completion(.success(typeObjects))
             } catch {
                 print(error)
             }
@@ -47,9 +47,9 @@ class NetworkManager {
         load(.passwordURL, type: Password.self) { result in
             switch result {
             case .success(let password):
-                completion(.success(password))
+                DispatchQueue.main.async { completion(.success(password)) }
             case .failure(let error):
-                completion(.failure(error))
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }
     }
@@ -59,9 +59,9 @@ class NetworkManager {
         load(.floorURL, type: Floor.self) { result in
             switch result {
             case .success(let floors):
-                completion(.success(floors))
+                DispatchQueue.main.async { completion(.success(floors)) }
             case .failure(let error):
-                completion(.failure(error))
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }
     }

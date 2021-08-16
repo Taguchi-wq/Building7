@@ -8,8 +8,15 @@
 import Foundation
 
 struct Floor: Decodable {
-    let floor: String
+    let name: String
     let mapImageName: String
     let restroomKind: Int
     let departments: [Department]
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "floor"
+        case mapImageName
+        case restroomKind
+        case departments
+    }
 }

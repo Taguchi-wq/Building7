@@ -12,7 +12,6 @@ struct Department: Decodable {
     let name: String?
     let imageName: String?
     let description: String?
-    let timetables: [Timetable]?
+    let color: String?
     let teachers: [Teacher]?
-    let color: DepartmentColor?
 }

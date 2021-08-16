@@ -9,9 +9,20 @@ import UIKit
 
 class DepartmentHeder: UICollectionReusableView {
 
+    // MARK: - @IBOutlets
+    /// フロア名を表示するUILabel
+    @IBOutlet private weak var floorNameLabel: UILabel!
+    
+    
+    // MARK: - Override Funcs
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    
+    // MARK: - Initializer
+    func initialize(floorName: String) {
+        floorNameLabel.text = "\(floorName)F"
     }
     
 }

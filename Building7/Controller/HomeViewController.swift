@@ -23,8 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCollectionView(homeCollectionView)
-        appendFloors()
+        updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +50,7 @@ class HomeViewController: UIViewController {
         collectionView.registerCell(DepartmentCell.self)
         collectionView.registerReusableView(DepartmentHeder.self)
     }
-    
+     
     /// 学科画面に遷移する
     private func presentDepartmentViewController() {
         guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
@@ -64,12 +63,14 @@ class HomeViewController: UIViewController {
 // MARK: - API通信
 extension HomeViewController {
     
-    /// 7号館のフロア情報を配列に格納する
-    private func appendFloors() {
+    /// フロア情報を画面に表示する
+    private func updateUI() {
         NetworkManager.shared.loadFloors { result in
+            self.setupCollectionView(self.homeCollectionView)
             switch result {
             case .success(let floors):
                 self.floors.append(contentsOf: floors)
+                self.homeCollectionView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -82,33 +83,15 @@ extension HomeViewController {
 // MARK: - Layout
 extension HomeViewController {
     
-    /// フロアのセクション
-    private enum FloorsLayoutKind: CaseIterable {
-        case floor10, floor9, floor8, floor7, floor6, floor5, floor4, floor3, floor2, floor1, floorB1, floorB2
-    }
-    
     // MARK: - Private Funcs
     /// ホーム画面のレイアウトを作成
     /// - Returns: ホーム画面のレイアウト
     private func createFloorLayout() -> UICollectionViewLayout {
         let floorLayout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let floorsLayoutKind = FloorsLayoutKind.allCases[sectionIndex]
-            switch floorsLayoutKind {
-            case .floor10: return self.floorSectionLayout()
-            case .floor9:  return self.floorSectionLayout()
-            case .floor8:  return self.floorSectionLayout()
-            case .floor7:  return self.floorSectionLayout()
-            case .floor6:  return self.floorSectionLayout()
-            case .floor5:  return self.floorSectionLayout()
-            case .floor4:  return self.floorSectionLayout()
-            case .floor3:  return self.floorSectionLayout()
-            case .floor2:  return self.floorSectionLayout()
-            case .floor1:  return self.floorSectionLayout()
-            case .floorB1: return self.floorSectionLayout()
-            case .floorB2: return self.floorSectionLayout()
-            }
+            return self.floorSectionLayout()
         }
+        
         return floorLayout
     }
     
@@ -160,16 +143,27 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        let floorsLayoutKind = FloorsLayoutKind.allCases[section]
+        let floor = floors[floorsLayoutKind.index]
+        return floor.departments.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let floorsLayoutKind = FloorsLayoutKind.allCases[indexPath.section]
+        let floor = floors[floorsLayoutKind.index]
+        let department = floor.departments[indexPath.item]
+        
         let departmentCell = collectionView.dequeueReusableCell(DepartmentCell.self, for: indexPath)
+        departmentCell.initialize(department: department)
         return departmentCell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let floorsLayoutKind = FloorsLayoutKind.allCases[indexPath.section]
+        let floor = floors[floorsLayoutKind.index]
+        
         let departmentHeder = collectionView.dequeueReusableView(DepartmentHeder.self, for: indexPath)
+        departmentHeder.initialize(floorName: floor.name)
         return departmentHeder
     }
     

@@ -24,6 +24,13 @@ class DepartmentCell: UICollectionViewCell {
     }
     
     
+    // MARK: - Funcs
+    func initialize(department: Department) {
+        departmentNameLabel.text     = department.name
+        contentsView.backgroundColor = UIColor(colorCode: department.color)
+    }
+    
+    
     // MARK: - Private Funcs
     /// UIの設定をする
     private func setupUI() {
