@@ -77,6 +77,8 @@
             <size key="customSize" width="345" height="293"/>
             <connections>
                 <outlet property="backButton" destination="FWS-Yz-q3A" id="9cn-Mf-NXj"/>
+                <outlet property="backView" destination="VBD-JZ-FY3" id="1SB-M5-B7F"/>
+                <outlet property="departmentImageView" destination="mj6-Xl-KbE" id="t0w-BD-GVe"/>
             </connections>
             <point key="canvasLocation" x="351.44927536231887" y="65.290178571428569"/>
         </collectionViewCell>

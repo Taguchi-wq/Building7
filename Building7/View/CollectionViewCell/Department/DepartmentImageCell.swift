@@ -17,6 +17,10 @@ class DepartmentImageCell: UICollectionViewCell {
     // MARK: - @IBOutlets
     /// 戻るボタン
     @IBOutlet private weak var backButton: UIButton!
+    /// 背景のUIView
+    @IBOutlet private weak var backView: UIView!
+    /// 学科の画像を表示するUIImageView
+    @IBOutlet private weak var departmentImageView: UIImageView!
     
     
     // MARK: - Override Funcs
@@ -24,6 +28,14 @@ class DepartmentImageCell: UICollectionViewCell {
         super.awakeFromNib()
         
         setupButton(backButton)
+    }
+    
+    
+    // MARK: - Initializer
+    func initialize(color: String?, imageName: String?) {
+        let imageName = imageName ?? ""
+        backView.backgroundColor = UIColor(colorCode: color)
+        departmentImageView.image = UIImage(named: imageName)
     }
     
     

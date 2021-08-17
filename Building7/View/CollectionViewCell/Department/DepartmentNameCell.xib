@@ -45,6 +45,9 @@
                 <constraint firstAttribute="trailing" secondItem="G4E-Li-b47" secondAttribute="trailing" id="wTU-PW-pWc"/>
             </constraints>
             <size key="customSize" width="431" height="93"/>
+            <connections>
+                <outlet property="departmentNameLabel" destination="fKu-uY-fky" id="6Z6-zY-Ae7"/>
+            </connections>
             <point key="canvasLocation" x="171.73913043478262" y="69.977678571428569"/>
         </collectionViewCell>
     </objects>

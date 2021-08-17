@@ -9,6 +9,11 @@ import UIKit
 
 class DepartmentViewController: UIViewController {
     
+    // MARK: - Properties
+    /// 学科
+    private var department: Department!
+    
+    
     // MARK: - @IBOutlets
     /// 学科の詳細を表示するUICollectionView
     @IBOutlet private weak var departmentCollectionView: UICollectionView!
@@ -25,6 +30,12 @@ class DepartmentViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupNavigationBar()
+    }
+    
+    
+    // MARK: - Initializer
+    func initialize(department: Department) {
+        self.department = department
     }
     
     
@@ -207,7 +218,7 @@ extension DepartmentViewController: UICollectionViewDataSource {
         case .image:       return 1
         case .name:        return 1
         case .description: return 1
-        case .teacher:     return 4
+        case .teacher:     return department.teachers?.count ?? 0
         }
     }
     
@@ -216,16 +227,20 @@ extension DepartmentViewController: UICollectionViewDataSource {
         switch departmentLayoutKind {
         case .image:
             let imageCell = collectionView.dequeueReusableCell(DepartmentImageCell.self, for: indexPath)
+            imageCell.initialize(color: department.color, imageName: department.imageName)
             imageCell.delegate = self
             return imageCell
         case .name:
             let nameCell = collectionView.dequeueReusableCell(DepartmentNameCell.self, for: indexPath)
+            nameCell.initialize(name: department.name)
             return nameCell
         case .description:
             let descriptionCell = collectionView.dequeueReusableCell(DepartmentDescriptionCell.self, for: indexPath)
+            descriptionCell.initialize(description: department.description)
             return descriptionCell
         case .teacher:
             let teacherCell = collectionView.dequeueReusableCell(TeacherCell.self, for: indexPath)
+            teacherCell.initialize(name: department.teachers?[indexPath.item].name)
             return teacherCell
         }
     }

@@ -9,9 +9,22 @@ import UIKit
 
 class TeacherCell: UICollectionViewCell {
 
+    // MARK: - @IBOutlets
+    /// 先生の画像を表示するUIImageView
+    @IBOutlet weak var teacherImageView: UIImageView!
+    /// 先生の名前を表示するUILabel
+    @IBOutlet weak var teacherNameLabel: UILabel!
+    
+    
+    // MARK: - Override Funcs
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+    
+    // MARK: - Initializer
+    func initialize(name: String?) {
+        teacherNameLabel.text = name
+    }
+    
 }

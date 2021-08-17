@@ -31,7 +31,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先生" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRU-1E-pyh">
                                         <rect key="frame" x="0.0" y="112" width="112" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -56,6 +56,10 @@
                 <constraint firstItem="bQb-Tw-okJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bCk-es-HxU"/>
             </constraints>
             <size key="customSize" width="132" height="160"/>
+            <connections>
+                <outlet property="teacherImageView" destination="dMq-30-W7p" id="rdr-Xh-UFQ"/>
+                <outlet property="teacherNameLabel" destination="rRU-1E-pyh" id="Zhx-JO-7UP"/>
+            </connections>
             <point key="canvasLocation" x="197.10144927536234" y="140.625"/>
         </collectionViewCell>
     </objects>

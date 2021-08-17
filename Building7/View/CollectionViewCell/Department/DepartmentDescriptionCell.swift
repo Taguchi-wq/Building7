@@ -9,9 +9,20 @@ import UIKit
 
 class DepartmentDescriptionCell: UICollectionViewCell {
 
+    // MARK: - @IBOutlets
+    /// 学科の説明を表示するUILabel
+    @IBOutlet private weak var departmentDescriptionLabel: UILabel!
+    
+    
+    // MARK: - Override Funcs
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    
+    // MARK: - Initializer
+    func initialize(description: String?) {
+        departmentDescriptionLabel.text = description
     }
 
 }

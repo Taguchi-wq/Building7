@@ -52,8 +52,9 @@ class HomeViewController: UIViewController {
     }
      
     /// 学科画面に遷移する
-    private func presentDepartmentViewController() {
+    private func presentDepartmentViewController(department: Department) {
         guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
+        departmentVC.initialize(department: department)
         navigationController?.pushViewController(departmentVC, animated: true)
     }
     
@@ -174,7 +175,10 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presentDepartmentViewController()
+        let floorsLayoutKind = FloorsLayoutKind.allCases[indexPath.section]
+        let floor = floors[floorsLayoutKind.index]
+        let department = floor.departments[indexPath.item]
+        presentDepartmentViewController(department: department)
     }
     
 }
