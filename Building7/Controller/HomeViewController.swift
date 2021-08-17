@@ -164,7 +164,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let floor = floors[floorsLayoutKind.index]
         
         let departmentHeder = collectionView.dequeueReusableView(DepartmentHeder.self, for: indexPath)
-        departmentHeder.initialize(floorName: floor.name)
+        departmentHeder.initialize(floor: floor)
         return departmentHeder
     }
     

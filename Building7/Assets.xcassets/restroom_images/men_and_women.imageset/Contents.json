@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "men_and_women.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

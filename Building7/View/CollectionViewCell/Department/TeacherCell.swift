@@ -26,7 +26,7 @@ class TeacherCell: UICollectionViewCell {
     func initialize(teacher: Teacher?) {
         guard let teacher = teacher else { return }
         teacherImageView.image = UIImage(named: teacher.imageName)
-        teacherNameLabel.text = teacher.name
+        teacherNameLabel.text  = teacher.name
     }
     
 }

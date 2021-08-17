@@ -25,7 +25,7 @@ class DepartmentImageCell: UICollectionViewCell {
     // MARK: - Initializer
     func initialize(color: String?, imageName: String?) {
         let imageName = imageName ?? ""
-        backView.backgroundColor = UIColor(colorCode: color)
+        backView.backgroundColor  = UIColor(colorCode: color)
         departmentImageView.image = UIImage(named: imageName)
     }
     

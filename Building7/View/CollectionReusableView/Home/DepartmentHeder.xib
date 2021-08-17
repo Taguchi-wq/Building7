@@ -26,7 +26,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restroom" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-Vl-vwA">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men_and_women" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-Vl-vwA">
                                     <rect key="frame" x="261" y="0.0" width="51" height="51"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="BUi-Vl-vwA" secondAttribute="height" multiplier="1:1" id="mCU-Bs-joA"/>
@@ -53,12 +53,13 @@
             </constraints>
             <connections>
                 <outlet property="floorNameLabel" destination="vQf-Gi-pHl" id="6hE-b3-XaX"/>
+                <outlet property="restroomImageView" destination="BUi-Vl-vwA" id="2yj-Tj-5lK"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="109.48660714285714"/>
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="restroom" width="1920" height="1080"/>
+        <image name="men_and_women" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
