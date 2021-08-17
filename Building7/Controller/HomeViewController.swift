@@ -108,7 +108,7 @@ extension HomeViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(3/5),
-            heightDimension: .fractionalHeight(1/4)
+            heightDimension: .fractionalHeight(1/6)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
