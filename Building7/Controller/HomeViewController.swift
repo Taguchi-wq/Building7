@@ -115,7 +115,7 @@ extension HomeViewController {
         
         let sectionHeaderSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(50)
+            heightDimension: .absolute(45)
         )
         
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
