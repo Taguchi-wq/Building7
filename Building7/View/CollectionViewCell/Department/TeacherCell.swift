@@ -23,8 +23,10 @@ class TeacherCell: UICollectionViewCell {
 
     
     // MARK: - Initializer
-    func initialize(name: String?) {
-        teacherNameLabel.text = name
+    func initialize(teacher: Teacher?) {
+        guard let teacher = teacher else { return }
+        teacherImageView.image = UIImage(named: teacher.imageName)
+        teacherNameLabel.text = teacher.name
     }
     
 }

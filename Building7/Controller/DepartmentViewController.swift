@@ -240,7 +240,7 @@ extension DepartmentViewController: UICollectionViewDataSource {
             return descriptionCell
         case .teacher:
             let teacherCell = collectionView.dequeueReusableCell(TeacherCell.self, for: indexPath)
-            teacherCell.initialize(name: department.teachers?[indexPath.item].name)
+            teacherCell.initialize(teacher: department.teachers?[indexPath.item])
             return teacherCell
         }
     }
