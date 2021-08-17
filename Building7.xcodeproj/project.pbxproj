@@ -30,7 +30,6 @@
 		7F3E4C6B26B987CF00FA9690 /* TeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6926B987CF00FA9690 /* TeacherCell.xib */; };
 		7F3E4C7826BADD9600FA9690 /* DepartmentSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */; };
 		7F3E4C7926BADD9600FA9690 /* DepartmentSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */; };
-		7F3E4C7B26BAE1EE00FA9690 /* DepartmentImageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7A26BAE1EE00FA9690 /* DepartmentImageCellDelegate.swift */; };
 		7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0AD26B2AB4F00EFF77D /* Color.swift */; };
 		7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */; };
 		7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957C026B2887600FCA82D /* AppDelegate.swift */; };
@@ -91,7 +90,6 @@
 		7F3E4C6926B987CF00FA9690 /* TeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCell.xib; sourceTree = "<group>"; };
 		7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSectionHeader.swift; sourceTree = "<group>"; };
 		7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentSectionHeader.xib; sourceTree = "<group>"; };
-		7F3E4C7A26BAE1EE00FA9690 /* DepartmentImageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentImageCellDelegate.swift; sourceTree = "<group>"; };
 		7F82E0AD26B2AB4F00EFF77D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7FA957BD26B2887600FCA82D /* Building7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Building7.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				7FE59E3126B315BF00738E81 /* Reusable.swift */,
-				7F3E4C7A26BAE1EE00FA9690 /* DepartmentImageCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -539,7 +536,6 @@
 				7FDB743326CA8542007F1430 /* UIColor+Extension.swift in Sources */,
 				7FE59E2B26B30F2500738E81 /* Auth.swift in Sources */,
 				7F16F57D26C93A3C00CCDBDE /* Password.swift in Sources */,
-				7F3E4C7B26BAE1EE00FA9690 /* DepartmentImageCellDelegate.swift in Sources */,
 				7F3E4C4C26B7D70D00FA9690 /* DepartmentCell.swift in Sources */,
 				7F3E4C5C26B97E4C00FA9690 /* DepartmentImageCell.swift in Sources */,
 				7F3E4C6A26B987CF00FA9690 /* TeacherCell.swift in Sources */,

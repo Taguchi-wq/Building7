@@ -17,6 +17,8 @@ class DepartmentViewController: UIViewController {
     // MARK: - @IBOutlets
     /// 学科の詳細を表示するUICollectionView
     @IBOutlet private weak var departmentCollectionView: UICollectionView!
+    /// 戻るボタン
+    @IBOutlet private weak var backButton: UIButton!
     
     
     // MARK: - Override Funcs
@@ -24,6 +26,7 @@ class DepartmentViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView(departmentCollectionView)
+        setupButton(backButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +59,20 @@ class DepartmentViewController: UIViewController {
         collectionView.registerCell(TeacherCell.self)
         collectionView.registerReusableView(DepartmentSectionHeader.self)
     }
+    
+    /// UIButtonの設定をする
+    /// - Parameter button: 設定するUIButton
+    private func setupButton(_ button: UIButton) {
+        button.layer.cornerRadius = 20
+    }
+    
+    
+    // MARK: - @IBActions
+    /// backボタンを押したときに呼ばれる
+    @IBAction private func tappedBackButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 
 }
 
@@ -228,7 +245,6 @@ extension DepartmentViewController: UICollectionViewDataSource {
         case .image:
             let imageCell = collectionView.dequeueReusableCell(DepartmentImageCell.self, for: indexPath)
             imageCell.initialize(color: department.color, imageName: department.imageName)
-            imageCell.delegate = self
             return imageCell
         case .name:
             let nameCell = collectionView.dequeueReusableCell(DepartmentNameCell.self, for: indexPath)
@@ -258,15 +274,4 @@ extension DepartmentViewController: UICollectionViewDataSource {
         }
     }
     
-}
-
-
-// MARK: - DepartmentImageCellDelegate
-extension DepartmentViewController: DepartmentImageCellDelegate {
-    
-    /// 前の画面に戻る
-    func back() {
-        navigationController?.popViewController(animated: true)
-    }
-
 }

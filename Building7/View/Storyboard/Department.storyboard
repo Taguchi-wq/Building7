@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,28 +25,37 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1jj-kc-fH5">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aRZ-PN-ebN">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uex-Xf-CDh">
+                                <rect key="frame" x="20" y="74" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="whD-P9-2Da"/>
+                                    <constraint firstAttribute="height" constant="40" id="yVa-pL-1d2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
+                                <state key="normal" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="tappedBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xnr-aI-U2s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UAS-fJ-Vv3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HFL-ni-Uxq" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="B3k-yw-RJY"/>
                             <constraint firstAttribute="bottom" secondItem="HFL-ni-Uxq" secondAttribute="bottom" id="GyQ-Rk-8DX"/>
+                            <constraint firstItem="uex-Xf-CDh" firstAttribute="top" secondItem="UAS-fJ-Vv3" secondAttribute="top" constant="30" id="J0d-Pr-0lJ"/>
+                            <constraint firstItem="uex-Xf-CDh" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" constant="20" id="PYz-8O-dRH"/>
                             <constraint firstItem="HFL-ni-Uxq" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" id="ZpB-7H-Kxh"/>
                             <constraint firstItem="HFL-ni-Uxq" firstAttribute="trailing" secondItem="UAS-fJ-Vv3" secondAttribute="trailing" id="j4k-Hd-Qox"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="uex-Xf-CDh" id="Dpg-gA-xIa"/>
                         <outlet property="departmentCollectionView" destination="HFL-ni-Uxq" id="86p-S2-JYs"/>
                     </connections>
                 </viewController>
@@ -57,6 +65,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

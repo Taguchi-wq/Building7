@@ -22,8 +22,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jsx-Fa-oOT">
                                 <rect key="frame" x="10" y="10" width="112" height="140"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dMq-30-W7p">
-                                        <rect key="frame" x="0.0" y="0.5" width="112" height="111"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ninomiya_teacher" translatesAutoresizingMaskIntoConstraints="NO" id="dMq-30-W7p">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
                                         <color key="tintColor" red="0.58823529409999997" green="0.31764705879999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dMq-30-W7p" secondAttribute="height" multiplier="1:1" id="2et-qy-zES"/>
@@ -64,6 +64,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="ninomiya_teacher" width="80" height="80"/>
     </resources>
 </document>
