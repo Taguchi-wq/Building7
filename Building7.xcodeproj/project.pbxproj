@@ -41,6 +41,8 @@
 		7FA957E326B2887900FCA82D /* Building7UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957E226B2887900FCA82D /* Building7UITests.swift */; };
 		7FA957F126B28D6E00FCA82D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957F026B28D6E00FCA82D /* LoginViewController.swift */; };
 		7FA957F326B28D7A00FCA82D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA957F226B28D7A00FCA82D /* Login.storyboard */; };
+		7FD7E3CE26CBFD1400CDDB48 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7E3CD26CBFD1400CDDB48 /* Weather.swift */; };
+		7FD7E3D026CBFD4100CDDB48 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7E3CF26CBFD4100CDDB48 /* Current.swift */; };
 		7FDB743126CA62DB007F1430 /* FloorsLayoutKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */; };
 		7FDB743326CA8542007F1430 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB743226CA8542007F1430 /* UIColor+Extension.swift */; };
 		7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2826B2BCBC00738E81 /* Alert.swift */; };
@@ -108,6 +110,8 @@
 		7FA957E426B2887900FCA82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FA957F026B28D6E00FCA82D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7FA957F226B28D7A00FCA82D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		7FD7E3CD26CBFD1400CDDB48 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		7FD7E3CF26CBFD4100CDDB48 /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorsLayoutKind.swift; sourceTree = "<group>"; };
 		7FDB743226CA8542007F1430 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7FE59E2826B2BCBC00738E81 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -171,10 +175,8 @@
 		7F16F57B26C93A1C00CCDBDE /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				7F16F57C26C93A3C00CCDBDE /* Password.swift */,
-				7F16F57F26C94AFD00CCDBDE /* Floor.swift */,
-				7F16F58126C94B4F00CCDBDE /* Department.swift */,
-				7F16F58526C94C0200CCDBDE /* Teacher.swift */,
+				7FD7E3CB26CBFCB300CDDB48 /* Building */,
+				7FD7E3CC26CBFCC700CDDB48 /* Weather */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -361,6 +363,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7FD7E3CB26CBFCB300CDDB48 /* Building */ = {
+			isa = PBXGroup;
+			children = (
+				7F16F57C26C93A3C00CCDBDE /* Password.swift */,
+				7F16F57F26C94AFD00CCDBDE /* Floor.swift */,
+				7F16F58126C94B4F00CCDBDE /* Department.swift */,
+				7F16F58526C94C0200CCDBDE /* Teacher.swift */,
+			);
+			path = Building;
+			sourceTree = "<group>";
+		};
+		7FD7E3CC26CBFCC700CDDB48 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				7FD7E3CD26CBFD1400CDDB48 /* Weather.swift */,
+				7FD7E3CF26CBFD4100CDDB48 /* Current.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		7FE59E2526B2B7DB00738E81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,8 +558,10 @@
 				7FA957C326B2887600FCA82D /* SceneDelegate.swift in Sources */,
 				7F16F57626C908B400CCDBDE /* NetworkManager.swift in Sources */,
 				7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */,
+				7FD7E3D026CBFD4100CDDB48 /* Current.swift in Sources */,
 				7FDB743326CA8542007F1430 /* UIColor+Extension.swift in Sources */,
 				7FE59E2B26B30F2500738E81 /* Auth.swift in Sources */,
+				7FD7E3CE26CBFD1400CDDB48 /* Weather.swift in Sources */,
 				7F44C2B426CBD7700023C67B /* RestroomKind.swift in Sources */,
 				7F16F57D26C93A3C00CCDBDE /* Password.swift in Sources */,
 				7F3E4C4C26B7D70D00FA9690 /* DepartmentCell.swift in Sources */,
