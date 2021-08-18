@@ -12,8 +12,8 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     /// 7号館のフロア情報を格納する配列
     private var floors: [Floor] = []
-    /// 天気の情報を格納する変数
-    private var weather: Weather? = nil
+    /// LocationManager
+    private let locationManager = LocationManager.shared
     
     
     // MARK: - @IBOutlets
@@ -25,8 +25,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadWeather()
         updateUI()
+        print(locationManager.latitude, locationManager.longitude)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,19 +75,6 @@ extension HomeViewController {
             case .success(let floors):
                 self.floors.append(contentsOf: floors)
                 self.homeCollectionView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    /// 現在の天気を読み込む
-    private func loadWeather() {
-        NetworkManager.shared.loadWeather { result in
-            switch result {
-            case .success(let weather):
-                self.weather = weather
-                print(self.weather)
             case .failure(let error):
                 print(error)
             }

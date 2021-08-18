@@ -68,8 +68,9 @@ class NetworkManager {
     
     // MARK: - Funs
     /// 天気の情報を読み込む
-    func loadWeather(completion: @escaping (Result<Weather, Error>) -> Void) {
-        load(.weatherURL, type: Weather.self) { result in
+    func loadWeather(latitude: Double, longitude: Double, completion: @escaping (Result<Weather, Error>) -> Void) {
+        let url: URL = .weatherURL(latitude: latitude, longitude: longitude)
+        load(url, type: Weather.self) { result in
             DispatchQueue.main.async { completion(result) }
         }
     }

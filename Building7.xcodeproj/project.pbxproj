@@ -31,6 +31,7 @@
 		7F3E4C7826BADD9600FA9690 /* DepartmentSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */; };
 		7F3E4C7926BADD9600FA9690 /* DepartmentSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */; };
 		7F44C2B426CBD7700023C67B /* RestroomKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44C2B326CBD76F0023C67B /* RestroomKind.swift */; };
+		7F50E93D26CD21E400BAE786 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F50E93C26CD21E400BAE786 /* LocationManager.swift */; };
 		7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0AD26B2AB4F00EFF77D /* Color.swift */; };
 		7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */; };
 		7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957C026B2887600FCA82D /* AppDelegate.swift */; };
@@ -94,6 +95,7 @@
 		7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSectionHeader.swift; sourceTree = "<group>"; };
 		7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentSectionHeader.xib; sourceTree = "<group>"; };
 		7F44C2B326CBD76F0023C67B /* RestroomKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomKind.swift; sourceTree = "<group>"; };
+		7F50E93C26CD21E400BAE786 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7F82E0AD26B2AB4F00EFF77D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7FA957BD26B2887600FCA82D /* Building7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Building7.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7F16F57526C908B400CCDBDE /* NetworkManager.swift */,
+				7F50E93C26CD21E400BAE786 /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			files = (
 				7FA957F126B28D6E00FCA82D /* LoginViewController.swift in Sources */,
 				7F16F58026C94AFD00CCDBDE /* Floor.swift in Sources */,
+				7F50E93D26CD21E400BAE786 /* LocationManager.swift in Sources */,
 				7F3E4C5026B7DD9E00FA9690 /* UICollectionView+Extension.swift in Sources */,
 				7F3E4C6626B9870F00FA9690 /* DepartmentDescriptionCell.swift in Sources */,
 				7F16F58626C94C0200CCDBDE /* Teacher.swift in Sources */,

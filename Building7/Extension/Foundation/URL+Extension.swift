@@ -20,9 +20,11 @@ extension URL {
         return URL(string: "http://20cm0123.main.jp/building7/floor.php")!
     }
     
+    
+    // MARK: - Static Funcs
     /// 天気のURL
-    static var weatherURL: URL {
-        return URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=35.689486&lon=139.691705&appid=a31aac119fcfb7fbe091b4eb7fcb74c5")!
+    static func weatherURL(latitude: Double, longitude: Double) -> URL {
+        return URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&appid=a31aac119fcfb7fbe091b4eb7fcb74c5")!
     }
     
 }
