@@ -46,12 +46,12 @@
                         <viewLayoutGuide key="safeArea" id="UAS-fJ-Vv3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="B3k-yw-RJY"/>
-                            <constraint firstAttribute="bottom" secondItem="HFL-ni-Uxq" secondAttribute="bottom" id="GyQ-Rk-8DX"/>
+                            <constraint firstAttribute="bottom" secondItem="HFL-ni-Uxq" secondAttribute="bottom" id="E7i-sJ-ejt"/>
                             <constraint firstItem="uex-Xf-CDh" firstAttribute="top" secondItem="UAS-fJ-Vv3" secondAttribute="top" constant="30" id="J0d-Pr-0lJ"/>
+                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" id="PTE-af-k38"/>
                             <constraint firstItem="uex-Xf-CDh" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" constant="20" id="PYz-8O-dRH"/>
-                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="leading" secondItem="UAS-fJ-Vv3" secondAttribute="leading" id="ZpB-7H-Kxh"/>
-                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="trailing" secondItem="UAS-fJ-Vv3" secondAttribute="trailing" id="j4k-Hd-Qox"/>
+                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="trailing" secondItem="UAS-fJ-Vv3" secondAttribute="trailing" id="Yp4-eG-s0t"/>
+                            <constraint firstItem="HFL-ni-Uxq" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="gkN-18-nhq"/>
                         </constraints>
                     </view>
                     <connections>

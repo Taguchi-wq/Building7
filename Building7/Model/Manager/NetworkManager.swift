@@ -71,7 +71,7 @@ class NetworkManager {
     func loadWeather(latitude: Double, longitude: Double, completion: @escaping (Result<Weather, Error>) -> Void) {
         let url: URL = .weatherURL(latitude: latitude, longitude: longitude)
         load(url, type: Weather.self) { result in
-            DispatchQueue.main.async { completion(result) }
+            completion(result)
         }
     }
     

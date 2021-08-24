@@ -13,6 +13,7 @@
 		7F16F58026C94AFD00CCDBDE /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F57F26C94AFD00CCDBDE /* Floor.swift */; };
 		7F16F58226C94B4F00CCDBDE /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F58126C94B4F00CCDBDE /* Department.swift */; };
 		7F16F58626C94C0200CCDBDE /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F58526C94C0200CCDBDE /* Teacher.swift */; };
+		7F23AFD626CD48D100CBAD03 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23AFD526CD48D100CBAD03 /* Building.swift */; };
 		7F3E4C4C26B7D70D00FA9690 /* DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4A26B7D70D00FA9690 /* DepartmentCell.swift */; };
 		7F3E4C4D26B7D70D00FA9690 /* DepartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4B26B7D70D00FA9690 /* DepartmentCell.xib */; };
 		7F3E4C5026B7DD9E00FA9690 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */; };
@@ -46,6 +47,7 @@
 		7FD7E3D026CBFD4100CDDB48 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7E3CF26CBFD4100CDDB48 /* Current.swift */; };
 		7FDB743126CA62DB007F1430 /* FloorsLayoutKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */; };
 		7FDB743326CA8542007F1430 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB743226CA8542007F1430 /* UIColor+Extension.swift */; };
+		7FDDC95526CE5F4700836AD5 /* Altimeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDC95426CE5F4700836AD5 /* Altimeter.swift */; };
 		7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2826B2BCBC00738E81 /* Alert.swift */; };
 		7FE59E2B26B30F2500738E81 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2A26B30F2500738E81 /* Auth.swift */; };
 		7FE59E2D26B3153800738E81 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE59E2C26B3153800738E81 /* Home.storyboard */; };
@@ -77,6 +79,7 @@
 		7F16F57F26C94AFD00CCDBDE /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		7F16F58126C94B4F00CCDBDE /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		7F16F58526C94C0200CCDBDE /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		7F23AFD526CD48D100CBAD03 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		7F3E4C4A26B7D70D00FA9690 /* DepartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCell.swift; sourceTree = "<group>"; };
 		7F3E4C4B26B7D70D00FA9690 /* DepartmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentCell.xib; sourceTree = "<group>"; };
 		7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		7FD7E3CF26CBFD4100CDDB48 /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorsLayoutKind.swift; sourceTree = "<group>"; };
 		7FDB743226CA8542007F1430 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7FDDC95426CE5F4700836AD5 /* Altimeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Altimeter.swift; sourceTree = "<group>"; };
 		7FE59E2826B2BCBC00738E81 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7FE59E2A26B30F2500738E81 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		7FE59E2C26B3153800738E81 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				7FE59E2A26B30F2500738E81 /* Auth.swift */,
+				7F23AFD526CD48D100CBAD03 /* Building.swift */,
+				7FDDC95426CE5F4700836AD5 /* Altimeter.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				7FE59E2F26B3154A00738E81 /* HomeViewController.swift in Sources */,
 				7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */,
 				7FA957C326B2887600FCA82D /* SceneDelegate.swift in Sources */,
+				7FDDC95526CE5F4700836AD5 /* Altimeter.swift in Sources */,
 				7F16F57626C908B400CCDBDE /* NetworkManager.swift in Sources */,
 				7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */,
 				7FD7E3D026CBFD4100CDDB48 /* Current.swift in Sources */,
@@ -570,6 +577,7 @@
 				7F16F57D26C93A3C00CCDBDE /* Password.swift in Sources */,
 				7F3E4C4C26B7D70D00FA9690 /* DepartmentCell.swift in Sources */,
 				7F3E4C5C26B97E4C00FA9690 /* DepartmentImageCell.swift in Sources */,
+				7F23AFD626CD48D100CBAD03 /* Building.swift in Sources */,
 				7F3E4C6A26B987CF00FA9690 /* TeacherCell.swift in Sources */,
 				7F3E4C6226B985FE00FA9690 /* DepartmentNameCell.swift in Sources */,
 				7F16F58226C94B4F00CCDBDE /* Department.swift in Sources */,

@@ -24,7 +24,7 @@ extension URL {
     // MARK: - Static Funcs
     /// 天気のURL
     static func weatherURL(latitude: Double, longitude: Double) -> URL {
-        return URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&appid=a31aac119fcfb7fbe091b4eb7fcb74c5")!
+        return URL(string: "https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=\(latitude)&lon=\(longitude)&appid=a31aac119fcfb7fbe091b4eb7fcb74c5")!
     }
     
 }

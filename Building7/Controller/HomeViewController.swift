@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import CoreMotion
 
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
     /// 7号館のフロア情報を格納する配列
     private var floors: [Floor] = []
+    /// 現在の階数
+    private var currentFloor: Int?
     /// LocationManager
-    private let locationManager = LocationManager.shared
+    private var location = LocationManager.shared
     
     
     // MARK: - @IBOutlets
@@ -25,8 +28,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appendCurrentFloor()
         updateUI()
-        print(locationManager.latitude, locationManager.longitude)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,12 +56,20 @@ class HomeViewController: UIViewController {
         collectionView.registerCell(DepartmentCell.self)
         collectionView.registerReusableView(DepartmentHeder.self)
     }
-     
+    
     /// 学科画面に遷移する
     private func presentDepartmentViewController(department: Department) {
         guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
         departmentVC.initialize(department: department)
         navigationController?.pushViewController(departmentVC, animated: true)
+    }
+    
+    /// 現在の階数を変数に入れる
+    private func appendCurrentFloor() {
+        let building = Building(location: location)
+        building.getCurrentFloor { currentFloor in
+            self.currentFloor = currentFloor
+        }
     }
     
 }
@@ -167,7 +178,13 @@ extension HomeViewController: UICollectionViewDataSource {
         let floor = floors[floorsLayoutKind.index]
         
         let departmentHeder = collectionView.dequeueReusableView(DepartmentHeder.self, for: indexPath)
-        departmentHeder.initialize(floor: floor)
+        
+        if currentFloor == (floorsLayoutKind.index + 1) {
+            departmentHeder.initialize(floor: floor, isHidden: false)
+        } else {
+            departmentHeder.initialize(floor: floor, isHidden: true)
+        }
+        
         return departmentHeder
     }
     

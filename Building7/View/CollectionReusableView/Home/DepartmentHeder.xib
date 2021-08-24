@@ -20,12 +20,33 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCE-Ij-PQY">
                             <rect key="frame" x="0.0" y="8" width="312" height="51"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQf-Gi-pHl">
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E11-TE-yae">
                                     <rect key="frame" x="0.0" y="0.0" width="261" height="51"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B2F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQf-Gi-pHl">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="51"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="tdL-wF-EHp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今ここ！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bri-x5-9bD">
+                                            <rect key="frame" x="60" y="0.0" width="90" height="51"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="BZA-Ss-sMa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-az-NRq">
+                                            <rect key="frame" x="150" y="0.0" width="111" height="51"/>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men_and_women" translatesAutoresizingMaskIntoConstraints="NO" id="BUi-Vl-vwA">
                                     <rect key="frame" x="261" y="0.0" width="51" height="51"/>
                                     <constraints>
@@ -52,6 +73,7 @@
                 <constraint firstAttribute="bottom" secondItem="zov-DW-lbh" secondAttribute="bottom" id="Pz8-gQ-7wG"/>
             </constraints>
             <connections>
+                <outlet property="currentLabel" destination="bri-x5-9bD" id="TbH-Du-56i"/>
                 <outlet property="floorNameLabel" destination="vQf-Gi-pHl" id="6hE-b3-XaX"/>
                 <outlet property="restroomImageView" destination="BUi-Vl-vwA" id="2yj-Tj-5lK"/>
             </connections>

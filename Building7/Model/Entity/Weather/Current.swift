@@ -8,5 +8,13 @@
 import Foundation
 
 struct Current: Decodable {
-    let pressure: Int
+    /// 海面気圧
+    let seaLevelPressure: Double
+    /// 気温
+    let temp: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case seaLevelPressure = "pressure"
+        case temp
+    }
 }

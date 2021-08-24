@@ -36,4 +36,13 @@ extension UICollectionView {
                                                 for: indexPath) as! T
     }
     
+    /// スクロールしてできた上の空白に色をつける
+    /// - Parameter colorCode: カラーコード
+    func addTopView(colorCode: String?) {
+        let frame   = CGRect(x: 0, y: -bounds.height, width: bounds.width, height: bounds.height)
+        let topView = UIView(frame: frame)
+        topView.backgroundColor = UIColor(colorCode: colorCode)
+        addSubview(topView)
+    }
+    
 }

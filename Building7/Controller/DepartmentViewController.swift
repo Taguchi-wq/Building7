@@ -58,6 +58,7 @@ class DepartmentViewController: UIViewController {
         collectionView.registerCell(DepartmentDescriptionCell.self)
         collectionView.registerCell(TeacherCell.self)
         collectionView.registerReusableView(DepartmentSectionHeader.self)
+        collectionView.addTopView(colorCode: department.color)
     }
     
     /// UIButtonの設定をする

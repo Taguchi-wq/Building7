@@ -28,7 +28,7 @@ class LocationManager: NSObject {
     
     
     // MRAK: - Initializer
-    override init() {
+    private override init() {
         super.init()
         
         setupLocationManager()
