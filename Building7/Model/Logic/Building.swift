@@ -10,19 +10,15 @@ import Foundation
 class Building {
     
     // MARK: - Private Properties
-    /// 緯度
-    private var latitude: Double?
-    /// 経度
-    private var longitude: Double?
+    private let location: Location!
     /// 高度計
     private var altimeter: Altimeter!
     
     
     // MARK: - Initializer
-    init(location: LocationManager) {
-        altimeter      = Altimeter()
-        self.latitude  = location.latitude
-        self.longitude = location.longitude
+    init() {
+        location  = Location()
+        altimeter = Altimeter()
     }
     
     
@@ -30,8 +26,8 @@ class Building {
     /// 高度を取得する
     /// - Parameter completion: 高度
     private func getAlttitude(completion: @escaping (Double) -> Void) {
-        guard let latitude  = latitude else { return }
-        guard let longitude = longitude else { return }
+        guard let latitude  = location.latitude else { return }
+        guard let longitude = location.longitude else { return }
         guard let weather   = loadWather(latitude: latitude, longitude: longitude) else { return }
         
         altimeter.getPressure { pressure in

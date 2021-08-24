@@ -15,8 +15,8 @@ class HomeViewController: UIViewController {
     private var floors: [Floor] = []
     /// 現在の階数
     private var currentFloor: Int?
-    /// LocationManager
-    private var location = LocationManager.shared
+    /// 7号館
+    private var building = Building()
     
     
     // MARK: - @IBOutlets
@@ -66,7 +66,6 @@ class HomeViewController: UIViewController {
     
     /// 現在の階数を変数に入れる
     private func appendCurrentFloor() {
-        let building = Building(location: location)
         building.getCurrentFloor { currentFloor in
             self.currentFloor = currentFloor
         }

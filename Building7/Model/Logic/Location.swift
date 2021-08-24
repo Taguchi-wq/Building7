@@ -1,23 +1,18 @@
 //
-//  LocationManager.swift
+//  Location.swift
 //  Building7
 //
-//  Created by cmStudent on 2021/08/18.
+//  Created by cmStudent on 2021/08/25.
 //
 
 import Foundation
 import CoreLocation
 
-class LocationManager: NSObject {
-    
-    // MARK: - Static Properties
-    /// LocationManagerのshared
-    static let shared = LocationManager()
-    
+class Location: NSObject {
     
     // MARK: - Private Properties
-    /// locationManager
-    private var locationManager: CLLocationManager!
+    /// location
+    private var location: CLLocationManager!
     
     
     // MARK: - Properties
@@ -28,28 +23,28 @@ class LocationManager: NSObject {
     
     
     // MRAK: - Initializer
-    private override init() {
+    override init() {
         super.init()
         
-        setupLocationManager()
+        setupLocation()
     }
     
     
     // MARK: - Private Funcs
-    /// locationManagerの設定をする
-    private func setupLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
+    /// locationの設定をする
+    private func setupLocation() {
+        location = CLLocationManager()
+        location.delegate = self
         checkLocationAuthorization()
     }
     
     /// 位置情報の認証状態を確認する
     private func checkLocationAuthorization() {
-        switch locationManager.authorizationStatus {
+        switch location.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
-            locationManager.startUpdatingLocation()
+            location.startUpdatingLocation()
         case .denied, .notDetermined, .restricted:
-            locationManager.requestWhenInUseAuthorization()
+            location.requestWhenInUseAuthorization()
         @unknown default:
             fatalError()
         }
@@ -59,7 +54,7 @@ class LocationManager: NSObject {
 
 
 // MARK: - CLLocationManagerDelegate
-extension LocationManager: CLLocationManagerDelegate {
+extension Location: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
@@ -73,3 +68,4 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
 }
+
