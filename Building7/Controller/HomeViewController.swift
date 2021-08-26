@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateCurrentFloor()
+        loadCurrentFloor()
         updateUI()
     }
     
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
         collectionView.delegate             = self
         collectionView.collectionViewLayout = createFloorLayout()
         collectionView.refreshControl       = UIRefreshControl()
-        collectionView.refreshControl?.addTarget(self, action: #selector(updateCurrentFloor), for: .valueChanged)
+        collectionView.refreshControl?.addTarget(self, action: #selector(loadCurrentFloor), for: .valueChanged)
         collectionView.registerCell(DepartmentCell.self)
         collectionView.registerReusableView(DepartmentHeder.self)
     }
@@ -88,15 +88,24 @@ extension HomeViewController {
         }
     }
     
-    
-    // MARK: - @objc
-    // TODO: - リロードのタイミングでカクツク
     /// 現在の階数を表示する
-    @objc private func updateCurrentFloor() {
-        building.getCurrentFloor { currentFloor in
+    /// - Parameter currentFloor: 現在の階数
+    private func updateCurrentFloor(_ currentFloor: Int) {
+        DispatchQueue.main.async {
             self.currentFloor = currentFloor
             self.homeCollectionView.reloadData()
             self.homeCollectionView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    
+    // MARK: - @objc
+    /// 現在の階数を読み込む
+    @objc private func loadCurrentFloor() {
+        DispatchQueue.global().async {
+            self.building.getCurrentFloor { currentFloor in
+                self.updateCurrentFloor(currentFloor)
+            }
         }
     }
     
