@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appendCurrentFloor()
+        updateCurrentFloor()
         updateUI()
     }
     
@@ -53,6 +53,8 @@ class HomeViewController: UIViewController {
         collectionView.dataSource           = self
         collectionView.delegate             = self
         collectionView.collectionViewLayout = createFloorLayout()
+        collectionView.refreshControl       = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(updateCurrentFloor), for: .valueChanged)
         collectionView.registerCell(DepartmentCell.self)
         collectionView.registerReusableView(DepartmentHeder.self)
     }
@@ -64,19 +66,13 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(departmentVC, animated: true)
     }
     
-    /// 現在の階数を変数に入れる
-    private func appendCurrentFloor() {
-        building.getCurrentFloor { currentFloor in
-            self.currentFloor = currentFloor
-        }
-    }
-    
 }
 
 
 // MARK: - API通信
 extension HomeViewController {
     
+    // MARK: - Private Funcs
     /// フロア情報を画面に表示する
     private func updateUI() {
         NetworkManager.shared.loadFloors { result in
@@ -88,6 +84,18 @@ extension HomeViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    
+    // MARK: - @objc
+    // TODO: - リロードのタイミングでカクツク
+    /// 現在の階数を表示する
+    @objc private func updateCurrentFloor() {
+        building.getCurrentFloor { currentFloor in
+            self.currentFloor = currentFloor
+            self.homeCollectionView.reloadData()
+            self.homeCollectionView.refreshControl?.endRefreshing()
         }
     }
     

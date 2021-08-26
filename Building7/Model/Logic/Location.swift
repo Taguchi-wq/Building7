@@ -22,7 +22,7 @@ class Location: NSObject {
     var longitude: Double?
     
     
-    // MRAK: - Initializer
+    // MARK: - Initializer
     override init() {
         super.init()
         

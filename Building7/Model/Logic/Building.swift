@@ -10,6 +10,7 @@ import Foundation
 class Building {
     
     // MARK: - Private Properties
+    /// ロケーション
     private let location: Location!
     /// 高度計
     private var altimeter: Altimeter!
@@ -26,10 +27,9 @@ class Building {
     /// 高度を取得する
     /// - Parameter completion: 高度
     private func getAlttitude(completion: @escaping (Double) -> Void) {
-        guard let latitude  = location.latitude else { return }
-        guard let longitude = location.longitude else { return }
-        guard let weather   = loadWather(latitude: latitude, longitude: longitude) else { return }
-        
+        guard let latitude  = location.latitude,
+              let longitude = location.longitude else { return }
+        guard let weather = loadWather(latitude: latitude, longitude: longitude) else { return }
         altimeter.getPressure { pressure in
             let temp1 = pow(weather.current.seaLevelPressure / pressure, (1 / 5.257)) - 1
             let temp2 = weather.current.temp + 273.15
