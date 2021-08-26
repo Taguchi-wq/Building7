@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
     
     /// 学科画面に遷移する
     private func presentDepartmentViewController(department: Department) {
-        // 学科がないクラスルームには遷移できないようにする
+        // 学科がない教室には遷移できないようにする
         guard department.name != nil else { return }
         guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
         departmentVC.initialize(department: department)
