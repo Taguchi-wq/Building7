@@ -48,35 +48,6 @@ class NetworkManager {
         }.resume()
     }
     
-    /// APIから情報を配列で読み込む
-    private func loadArray<T: Decodable>(_ url: URL, type: T.Type, completion: @escaping (Result<[T], NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let _ = error {
-                completion(.failure(.invalidData))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completion(.failure(.invalidData))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.invalidData))
-                return
-            }
-            
-            do {
-                let typeObjects = try JSONDecoder().decode([T].self, from: data)
-                completion(.success(typeObjects))
-            } catch {
-                completion(.failure(.invalidData))
-            }
-            
-        }.resume()
-    }
-    
     
     // MARK: - Funs
     /// 天気の情報を読み込む
@@ -89,14 +60,14 @@ class NetworkManager {
     
     /// ログインパスワードを読み込む
     func loadPassword(completion: @escaping (Result<[Password], NetworkError>) -> Void) {
-        loadArray(.passwordURL, type: Password.self) { result in
+        load(.passwordURL, type: [Password].self) { result in
             DispatchQueue.main.async { completion(result) }
         }
     }
     
     /// 7号館のフロア情報を読み込む
     func loadFloors(completion: @escaping (Result<[Floor], NetworkError>) -> Void) {
-        loadArray(.floorURL, type: Floor.self) { result in
+        load(.floorURL, type: [Floor].self) { result in
             DispatchQueue.main.async { completion(result) }
         }
     }
