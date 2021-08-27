@@ -83,7 +83,7 @@ extension HomeViewController {
                 self.floors.append(contentsOf: floors)
                 self.homeCollectionView.reloadData()
             case .failure(let error):
-                print(error)
+                Alert.presentInvalidData(on: self, title: error.rawValue)
             }
         }
     }
