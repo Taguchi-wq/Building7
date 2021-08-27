@@ -36,7 +36,7 @@ class NetworkManager {
                 let typeObjects = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(typeObjects))
             } catch {
-                print(error)
+                completion(.failure(error))
             }
             
         }.resume()
@@ -59,7 +59,7 @@ class NetworkManager {
                 let typeObjects = try JSONDecoder().decode([T].self, from: data)
                 completion(.success(typeObjects))
             } catch {
-                print(error)
+                completion(.failure(error))
             }
             
         }.resume()

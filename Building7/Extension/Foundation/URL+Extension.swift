@@ -12,12 +12,12 @@ extension URL {
     // MARK: - Static Properties
     /// ログインパスワードのURL
     static var passwordURL: URL {
-        return URL(string: "http://20cm0123.main.jp/building7/password.php")!
+        return URL(string: "http://20cm0123.main.jp/building7/password.php?key=kWgstG24CeYJB2YQT5K5ZgKNVfSdU2")!
     }
     
     /// 7号館フロアのURL
     static var floorURL: URL {
-        return URL(string: "http://20cm0123.main.jp/building7/floor.php")!
+        return URL(string: "http://20cm0123.main.jp/building7/floor.php?key=kWgstG24CeYJB2YQT5K5ZgKNVfSdU2")!
     }
     
     

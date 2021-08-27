@@ -77,9 +77,9 @@ extension HomeViewController {
     /// フロア情報を画面に表示する
     private func updateUI() {
         NetworkManager.shared.loadFloors { result in
-            self.setupCollectionView(self.homeCollectionView)
             switch result {
             case .success(let floors):
+                self.setupCollectionView(self.homeCollectionView)
                 self.floors.append(contentsOf: floors)
                 self.homeCollectionView.reloadData()
             case .failure(let error):
