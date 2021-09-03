@@ -83,7 +83,7 @@ extension HomeViewController {
                 self.floors.append(contentsOf: floors)
                 self.homeCollectionView.reloadData()
             case .failure(let error):
-                Alert.presentInvalidData(on: self, title: error.rawValue)
+                Alert.presentInvalidData(on: self, title: error)
             }
         }
     }
@@ -103,8 +103,14 @@ extension HomeViewController {
     /// 現在の階数を読み込む
     @objc private func loadCurrentFloor() {
         DispatchQueue.global().async {
-            self.building.getCurrentFloor { currentFloor in
-                self.updateCurrentFloor(currentFloor)
+            self.building.getCurrentFloor { result in
+                switch result {
+                case .success(let currentFloor):
+                    self.updateCurrentFloor(currentFloor)
+                case .failure(let error):
+                    Alert.presentInvalidCurrentFloor(on: self, title: error)
+                    self.updateCurrentFloor(0)
+                }
             }
         }
     }

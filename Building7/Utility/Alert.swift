@@ -26,10 +26,20 @@ class Alert {
         DispatchQueue.main.async { viewController.present(alert, animated: true) }
     }
     
-    /// データが取得できなかったことをしたせるアラート
+    /// データが取得できなかったことを知らせるアラート
     /// - Parameter viewController: アラートを表示するUIViewController
-    static func presentInvalidData(on viewController: UIViewController, title: String) {
-        let alert = createBasicAlert(title: title) { _ in fatalError("データ取得に失敗したのでアプリを落とす") }
+    /// - Parameter title: メッセージのタイトル
+    static func presentInvalidData(on viewController: UIViewController, title: NetworkError) {
+        let alert = createBasicAlert(title: title.rawValue) { _ in fatalError("データ取得に失敗したのでアプリを落とす") }
+        DispatchQueue.main.async { viewController.present(alert, animated: true) }
+    }
+    
+    /// 現在の階数が取得できなかったことを知らせるアラート
+    /// - Parameters:
+    ///   - viewController: アラートを表示するUIViewController
+    ///   - title: メッセージのタイトル
+    static func presentInvalidCurrentFloor(on viewController: UIViewController, title: NetworkError) {
+        let alert = createBasicAlert(title: title.rawValue, handler: nil)
         DispatchQueue.main.async { viewController.present(alert, animated: true) }
     }
     
