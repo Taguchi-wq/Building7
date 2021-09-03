@@ -14,9 +14,9 @@ final class WeatherAPI {
         
         // MARK: - Private Properties
         /// 緯度
-        private let latitude: Double
+        let latitude: Double
         /// 経度
-        private let longitude: Double
+        let longitude: Double
         
         
         // MARK: - Properties
