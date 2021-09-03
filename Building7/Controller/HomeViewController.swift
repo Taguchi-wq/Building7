@@ -82,8 +82,8 @@ extension HomeViewController {
                 self.setupCollectionView(self.homeCollectionView)
                 self.floors.append(contentsOf: floors)
                 self.homeCollectionView.reloadData()
-            case .failure(let error):
-                Alert.presentInvalidData(on: self, title: error)
+            case .failure(let errorMessage):
+                Alert.presentInvalidData(messege: errorMessage)
             }
         }
     }
@@ -107,8 +107,8 @@ extension HomeViewController {
                 switch result {
                 case .success(let currentFloor):
                     self.updateCurrentFloor(currentFloor)
-                case .failure(let error):
-                    Alert.presentInvalidCurrentFloor(on: self, title: error)
+                case .failure(let errorMessage):
+                    Alert.presentInvalidCurrentFloor(message: errorMessage)
                     self.updateCurrentFloor(0)
                 }
             }

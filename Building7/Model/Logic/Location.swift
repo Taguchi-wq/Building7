@@ -43,8 +43,10 @@ class Location: NSObject {
         switch location.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
             location.startUpdatingLocation()
-        case .denied, .notDetermined, .restricted:
+        case .notDetermined, .restricted:
             location.requestWhenInUseAuthorization()
+        case .denied:
+            Alert.presentLocationInformationPermission()
         @unknown default:
             fatalError()
         }

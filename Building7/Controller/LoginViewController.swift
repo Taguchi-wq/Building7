@@ -68,7 +68,7 @@ class LoginViewController: UIViewController {
         Auth.shared.login(password) {
             transitionToHomeVC()
         } failure: {
-            Alert.presentIncorrectPassword(on: self)
+            Alert.presentIncorrectPassword()
         }
     }
     

@@ -13,34 +13,45 @@ class Alert {
     /// - Parameter title: タイトル
     /// - Parameter handler: OKボタンを押した時の処理
     /// - Returns: アラート
-    private static func createBasicAlert(title: String, handler: ((UIAlertAction) -> Void)?) -> UIAlertController {
-        let alert = UIAlertController(title: title, message: String(), preferredStyle: .alert)
+    private static func createBasicAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: handler))
         return alert
     }
     
     /// パスワードが間違ってることをしらせるアラート
-    /// - Parameter viewController: アラートを表示するUIViewController
-    static func presentIncorrectPassword(on viewController: UIViewController) {
-        let alert = createBasicAlert(title: "コードが間違っています。\nやり直してください。", handler: nil)
-        DispatchQueue.main.async { viewController.present(alert, animated: true) }
+    static func presentIncorrectPassword() {
+        let alert = createBasicAlert(title: "エラー", message: "コードが間違っています。やり直してください。", handler: nil)
+        alert.present()
     }
     
     /// データが取得できなかったことを知らせるアラート
-    /// - Parameter viewController: アラートを表示するUIViewController
-    /// - Parameter title: メッセージのタイトル
-    static func presentInvalidData(on viewController: UIViewController, title: NetworkError) {
-        let alert = createBasicAlert(title: title.rawValue) { _ in fatalError("データ取得に失敗したのでアプリを落とす") }
-        DispatchQueue.main.async { viewController.present(alert, animated: true) }
+    /// - Parameter messege: メッセージ
+    static func presentInvalidData(messege: NetworkError) {
+        let alert = createBasicAlert(title: "エラー", message: messege.rawValue) { _ in fatalError("データ取得に失敗したのでアプリを落とす")
+        }
+        alert.present()
     }
     
     /// 現在の階数が取得できなかったことを知らせるアラート
     /// - Parameters:
-    ///   - viewController: アラートを表示するUIViewController
-    ///   - title: メッセージのタイトル
-    static func presentInvalidCurrentFloor(on viewController: UIViewController, title: NetworkError) {
-        let alert = createBasicAlert(title: title.rawValue, handler: nil)
-        DispatchQueue.main.async { viewController.present(alert, animated: true) }
+    ///   - message: メッセージ
+    static func presentInvalidCurrentFloor(message: NetworkError) {
+        let alert = createBasicAlert(title: "エラー", message: message.rawValue, handler: nil)
+        alert.present()
+    }
+    
+    /// 位置情報の使用許可を促すアラート
+    static func presentLocationInformationPermission() {
+        // 位置情報の設定画面
+        let settingAppURL = URL(string: UIApplication.openSettingsURLString)!
+        let alert = createBasicAlert(title: "位置情報が利用できません",
+                                     message: "位置情報を使用することが許可されていません。”設定”で位置情報へのアクセスを有効にしてください",
+                                     handler: nil)
+        alert.addAction(UIAlertAction(title: "設定", style: .default) { _ in
+            UIApplication.shared.open(settingAppURL, options: [:], completionHandler: nil)
+        })
+        alert.present()
     }
     
 }
