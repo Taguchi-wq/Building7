@@ -20,8 +20,9 @@ class NetworkManager {
     
     // MARK: - Private Funcs
     /// APIから情報を読み込む
-    private func load<T: Decodable>(_ url: URL, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+    private func load<T: Decodable>(_ request: Request, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        let urlRequest = request.createURLRequest()
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             
             if let _ = error {
                 completion(.failure(.invalidData))
@@ -52,22 +53,24 @@ class NetworkManager {
     // MARK: - Funs
     /// 天気の情報を読み込む
     func loadWeather(latitude: Double, longitude: Double, completion: @escaping (Result<Weather, NetworkError>) -> Void) {
-        let url: URL = .weatherURL(latitude: latitude, longitude: longitude)
-        load(url, type: Weather.self) { result in
+        let weatherRequest = WeatherAPI.WeatherRequest(latitude: latitude, longitude: longitude)
+        load(weatherRequest, type: Weather.self) { result in
             completion(result)
         }
     }
     
     /// ログインパスワードを読み込む
     func loadPassword(completion: @escaping (Result<[Password], NetworkError>) -> Void) {
-        load(.passwordURL, type: [Password].self) { result in
+        let passwordRequest = Building7API.PasswordRequest()
+        load(passwordRequest, type: [Password].self) { result in
             DispatchQueue.main.async { completion(result) }
         }
     }
     
     /// 7号館のフロア情報を読み込む
     func loadFloors(completion: @escaping (Result<[Floor], NetworkError>) -> Void) {
-        load(.floorURL, type: [Floor].self) { result in
+        let floorRequest = Building7API.FloorRequest()
+        load(floorRequest, type: [Floor].self) { result in
             DispatchQueue.main.async { completion(result) }
         }
     }

@@ -45,7 +45,7 @@ class Building {
     /// - Parameter completion: 現在の階数
     func getCurrentFloor(completion: @escaping (Int) -> Void) {
         getAlttitude { alttitude in
-            let currentFloor = Int(round((alttitude - 33.8) / 3.3))
+            let currentFloor = Int((alttitude - 27.4) / 3.3)
             completion(currentFloor)
         }
     }
