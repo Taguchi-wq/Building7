@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseURL</key>
+	<string>http://20cm0123.main.jp</string>
+	<key>FloorPath</key>
+	<string>/building7/floor.php</string>
+	<key>PasswordPath</key>
+	<string>/building7/password.php</string>
+	<key>Key</key>
+	<string>kWgstG24CeYJB2YQT5K5ZgKNVfSdU2</string>
+</dict>
+</plist>

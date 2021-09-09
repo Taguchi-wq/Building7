@@ -9,6 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Properties
+    /// 7号館のフロア情報を格納する配列
+    private var floors: [Floor] = []
+    /// 現在の階数
+    private var currentFloor: Int?
+    /// 7号館
+    private var building = Building()
+    
+    
     // MARK: - @IBOutlets
     /// 学科を表示するUICollectionView
     @IBOutlet private weak var homeCollectionView: UICollectionView!
@@ -18,8 +27,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadCurrentFloor()
+        updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setupNavigationBar()
-        setupCollectionView(homeCollectionView)
     }
     
     
@@ -35,9 +50,69 @@ class HomeViewController: UIViewController {
     /// - Parameter collectionView: 設定するUICollectionView
     private func setupCollectionView(_ collectionView: UICollectionView) {
         collectionView.dataSource           = self
-        collectionView.collectionViewLayout = createHomeLayout()
-        collectionView.registerCell(type: DepartmentCell.self)
-        collectionView.registerReusableView(type: DepartmentHeder.self)
+        collectionView.delegate             = self
+        collectionView.collectionViewLayout = createFloorLayout()
+        collectionView.refreshControl       = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(loadCurrentFloor), for: .valueChanged)
+        collectionView.registerCell(DepartmentCell.self)
+        collectionView.registerReusableView(DepartmentHeder.self)
+    }
+    
+    /// 学科画面に遷移する
+    private func presentDepartmentViewController(department: Department) {
+        // 学科がない教室には遷移できないようにする
+        guard department.name != nil else { return }
+        guard let departmentVC = storyboard?.instantiateViewController(withIdentifier: DepartmentViewController.reuseIdentifier) as? DepartmentViewController else { return }
+        departmentVC.initialize(department: department)
+        navigationController?.pushViewController(departmentVC, animated: true)
+    }
+    
+}
+
+
+// MARK: - API通信
+extension HomeViewController {
+    
+    // MARK: - Private Funcs
+    /// フロア情報を画面に表示する
+    private func updateUI() {
+        NetworkManager.shared.loadFloors { result in
+            switch result {
+            case .success(let floors):
+                self.setupCollectionView(self.homeCollectionView)
+                self.floors.append(contentsOf: floors)
+                self.homeCollectionView.reloadData()
+            case .failure(let errorMessage):
+                Alert.presentInvalidData(messege: errorMessage)
+            }
+        }
+    }
+    
+    /// 現在の階数を表示する
+    /// - Parameter currentFloor: 現在の階数
+    private func updateCurrentFloor(_ currentFloor: Int) {
+        DispatchQueue.main.async {
+            self.currentFloor = currentFloor
+            self.homeCollectionView.reloadData()
+            self.homeCollectionView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    
+    // MARK: - @objc
+    /// 現在の階数を読み込む
+    @objc private func loadCurrentFloor() {
+        DispatchQueue.global().async {
+            self.building.getCurrentFloor { result in
+                switch result {
+                case .success(let currentFloor):
+                    self.updateCurrentFloor(currentFloor)
+                case .failure(let errorMessage):
+                    Alert.presentInvalidCurrentFloor(message: errorMessage)
+                    self.updateCurrentFloor(0)
+                }
+            }
+        }
     }
     
 }
@@ -46,57 +121,52 @@ class HomeViewController: UIViewController {
 // MARK: - Layout
 extension HomeViewController {
     
-    // MARK: - Enums
-    /// フロアのセクション
-    private enum FloorsLayoutKind: CaseIterable {
-        case floor10, floor9, floor8, floor7, floor6, floor5, floor4, floor3, floor2, floor1, floorB1, floorB2
-    }
-    
-    
     // MARK: - Private Funcs
     /// ホーム画面のレイアウトを作成
     /// - Returns: ホーム画面のレイアウト
-    private func createHomeLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout {
+    private func createFloorLayout() -> UICollectionViewLayout {
+        let floorLayout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let section = FloorsLayoutKind.allCases[sectionIndex]
-            switch section {
-            case .floor10: return self.floorSectionLayout()
-            case .floor9:  return self.floorSectionLayout()
-            case .floor8:  return self.floorSectionLayout()
-            case .floor7:  return self.floorSectionLayout()
-            case .floor6:  return self.floorSectionLayout()
-            case .floor5:  return self.floorSectionLayout()
-            case .floor4:  return self.floorSectionLayout()
-            case .floor3:  return self.floorSectionLayout()
-            case .floor2:  return self.floorSectionLayout()
-            case .floor1:  return self.floorSectionLayout()
-            case .floorB1: return self.floorSectionLayout()
-            case .floorB2: return self.floorSectionLayout()
-            }
+            return self.floorSectionLayout()
         }
-        return layout
+        
+        return floorLayout
     }
     
-    /// フロアのセクション
-    /// - Returns: フロアのセクション
+    /// フロアセクションのレイアウト
+    /// - Returns: フロアセクションのレイアウト
     private func floorSectionLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
+        
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(3/5),
-                                               heightDimension: .fractionalHeight(1/4))
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(3/5),
+            heightDimension: .fractionalHeight(1/6)
+        )
+        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(45)
+        )
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: sectionHeaderSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
         let section = NSCollectionLayoutSection(group: group)
-        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                       heightDimension: .absolute(50))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
-                                                                        elementKind: UICollectionView.elementKindSectionHeader,
-                                                                        alignment: .top)
         section.boundarySupplementaryItems = [sectionHeader]
         section.orthogonalScrollingBehavior = .continuous
         section.interGroupSpacing = 16
         section.contentInsets = .init(top: 16, leading: 20, bottom: 16, trailing: 20)
+        
         return section
     }
     
@@ -111,17 +181,47 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        let floorsLayoutKind = FloorsLayoutKind.allCases[section]
+        let floor = floors[floorsLayoutKind.index]
+        return floor.departments.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let departmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentCell.reuseIdentifier, for: indexPath) as! DepartmentCell
+        let floorsLayoutKind = FloorsLayoutKind.allCases[indexPath.section]
+        let floor = floors[floorsLayoutKind.index]
+        let department = floor.departments[indexPath.item]
+        
+        let departmentCell = collectionView.dequeueReusableCell(DepartmentCell.self, for: indexPath)
+        departmentCell.initialize(department: department)
         return departmentCell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let departmentHeder = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DepartmentHeder.reuseIdentifier, for: indexPath) as! DepartmentHeder
+        let floorsLayoutKind = FloorsLayoutKind.allCases[indexPath.section]
+        let floor = floors[floorsLayoutKind.index]
+        
+        let departmentHeder = collectionView.dequeueReusableView(DepartmentHeder.self, for: indexPath)
+        
+        if currentFloor == (floorsLayoutKind.index + 1) {
+            departmentHeder.initialize(floor: floor, isHidden: false)
+        } else {
+            departmentHeder.initialize(floor: floor, isHidden: true)
+        }
+        
         return departmentHeder
+    }
+    
+}
+
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let floorsLayoutKind = FloorsLayoutKind.allCases[indexPath.section]
+        let floor = floors[floorsLayoutKind.index]
+        let department = floor.departments[indexPath.item]
+        presentDepartmentViewController(department: department)
     }
     
 }

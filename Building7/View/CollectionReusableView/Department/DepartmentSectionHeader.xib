@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DepartmentSectionHeader" id="U6b-Vx-4bR" customClass="DepartmentSectionHeader" customModule="Building7" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reU-0Q-wdh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学科説明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpG-b3-fOc">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lpG-b3-fOc" secondAttribute="bottom" id="QfL-fR-izb"/>
+                        <constraint firstItem="lpG-b3-fOc" firstAttribute="top" secondItem="reU-0Q-wdh" secondAttribute="top" id="RdP-Yx-SPd"/>
+                        <constraint firstAttribute="trailing" secondItem="lpG-b3-fOc" secondAttribute="trailing" id="n7B-eS-0ko"/>
+                        <constraint firstItem="lpG-b3-fOc" firstAttribute="leading" secondItem="reU-0Q-wdh" secondAttribute="leading" id="vQH-eQ-uV2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="reU-0Q-wdh" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="2eM-zA-EEA"/>
+                <constraint firstAttribute="bottom" secondItem="reU-0Q-wdh" secondAttribute="bottom" id="JHF-lx-pFf"/>
+                <constraint firstItem="reU-0Q-wdh" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="anY-aL-uyH"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="reU-0Q-wdh" secondAttribute="trailing" id="rRZ-wd-wqr"/>
+            </constraints>
+            <connections>
+                <outlet property="sectionNameLabel" destination="lpG-b3-fOc" id="dzn-1Y-b72"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="113.16964285714285"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

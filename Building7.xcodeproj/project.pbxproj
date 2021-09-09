@@ -7,11 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F16F57626C908B400CCDBDE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F57526C908B400CCDBDE /* NetworkManager.swift */; };
+		7F16F57D26C93A3C00CCDBDE /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F57C26C93A3C00CCDBDE /* Password.swift */; };
+		7F16F58026C94AFD00CCDBDE /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F57F26C94AFD00CCDBDE /* Floor.swift */; };
+		7F16F58226C94B4F00CCDBDE /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F58126C94B4F00CCDBDE /* Department.swift */; };
+		7F16F58626C94C0200CCDBDE /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16F58526C94C0200CCDBDE /* Teacher.swift */; };
+		7F23AFD626CD48D100CBAD03 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23AFD526CD48D100CBAD03 /* Building.swift */; };
 		7F3E4C4C26B7D70D00FA9690 /* DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4A26B7D70D00FA9690 /* DepartmentCell.swift */; };
 		7F3E4C4D26B7D70D00FA9690 /* DepartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4B26B7D70D00FA9690 /* DepartmentCell.xib */; };
 		7F3E4C5026B7DD9E00FA9690 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */; };
 		7F3E4C5426B9439900FA9690 /* DepartmentHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5226B9439900FA9690 /* DepartmentHeder.swift */; };
 		7F3E4C5526B9439900FA9690 /* DepartmentHeder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5326B9439900FA9690 /* DepartmentHeder.xib */; };
+		7F3E4C5726B954EC00FA9690 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5626B954EC00FA9690 /* DepartmentViewController.swift */; };
+		7F3E4C5926B9550800FA9690 /* Department.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5826B9550800FA9690 /* Department.storyboard */; };
+		7F3E4C5C26B97E4C00FA9690 /* DepartmentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5A26B97E4C00FA9690 /* DepartmentImageCell.swift */; };
+		7F3E4C5D26B97E4C00FA9690 /* DepartmentImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C5B26B97E4C00FA9690 /* DepartmentImageCell.xib */; };
+		7F3E4C6226B985FE00FA9690 /* DepartmentNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6026B985FE00FA9690 /* DepartmentNameCell.swift */; };
+		7F3E4C6326B985FE00FA9690 /* DepartmentNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6126B985FE00FA9690 /* DepartmentNameCell.xib */; };
+		7F3E4C6626B9870F00FA9690 /* DepartmentDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6426B9870F00FA9690 /* DepartmentDescriptionCell.swift */; };
+		7F3E4C6726B9870F00FA9690 /* DepartmentDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6526B9870F00FA9690 /* DepartmentDescriptionCell.xib */; };
+		7F3E4C6A26B987CF00FA9690 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6826B987CF00FA9690 /* TeacherCell.swift */; };
+		7F3E4C6B26B987CF00FA9690 /* TeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C6926B987CF00FA9690 /* TeacherCell.xib */; };
+		7F3E4C7826BADD9600FA9690 /* DepartmentSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */; };
+		7F3E4C7926BADD9600FA9690 /* DepartmentSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */; };
+		7F44C2B426CBD7700023C67B /* RestroomKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44C2B326CBD76F0023C67B /* RestroomKind.swift */; };
+		7F70E4B826E22C3900335396 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70E4B726E22C3900335396 /* UIAlertController+Extension.swift */; };
 		7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0AD26B2AB4F00EFF77D /* Color.swift */; };
 		7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */; };
 		7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957C026B2887600FCA82D /* AppDelegate.swift */; };
@@ -22,11 +42,24 @@
 		7FA957E326B2887900FCA82D /* Building7UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957E226B2887900FCA82D /* Building7UITests.swift */; };
 		7FA957F126B28D6E00FCA82D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA957F026B28D6E00FCA82D /* LoginViewController.swift */; };
 		7FA957F326B28D7A00FCA82D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA957F226B28D7A00FCA82D /* Login.storyboard */; };
+		7FC6BEA426D5434B006F7122 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6BEA326D5434B006F7122 /* Location.swift */; };
+		7FD7E3CE26CBFD1400CDDB48 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7E3CD26CBFD1400CDDB48 /* Weather.swift */; };
+		7FD7E3D026CBFD4100CDDB48 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7E3CF26CBFD4100CDDB48 /* Current.swift */; };
+		7FDB743126CA62DB007F1430 /* FloorsLayoutKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */; };
+		7FDB743326CA8542007F1430 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB743226CA8542007F1430 /* UIColor+Extension.swift */; };
+		7FDDC95526CE5F4700836AD5 /* Altimeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDC95426CE5F4700836AD5 /* Altimeter.swift */; };
+		7FE50C0B26D93D2200C6B561 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE50C0A26D93D2200C6B561 /* NetworkError.swift */; };
+		7FE50C0F26D9580400C6B561 /* Building7URL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FE50C0E26D9580400C6B561 /* Building7URL.plist */; };
+		7FE50C1126D959EE00C6B561 /* PListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE50C1026D959EE00C6B561 /* PListManager.swift */; };
+		7FE50C1526D95FB400C6B561 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE50C1426D95FB400C6B561 /* Request.swift */; };
 		7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2826B2BCBC00738E81 /* Alert.swift */; };
 		7FE59E2B26B30F2500738E81 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2A26B30F2500738E81 /* Auth.swift */; };
 		7FE59E2D26B3153800738E81 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE59E2C26B3153800738E81 /* Home.storyboard */; };
 		7FE59E2F26B3154A00738E81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E2E26B3154A00738E81 /* HomeViewController.swift */; };
 		7FE59E3226B315BF00738E81 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE59E3126B315BF00738E81 /* Reusable.swift */; };
+		7FF3A89F26E1E2B60053FB11 /* Building7API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3A89E26E1E2B60053FB11 /* Building7API.swift */; };
+		7FF3A8A126E1EB770053FB11 /* WeatherURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FF3A8A026E1EB770053FB11 /* WeatherURL.plist */; };
+		7FF3A8A426E1ECAD0053FB11 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3A8A326E1ECAD0053FB11 /* WeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,11 +80,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F16F57526C908B400CCDBDE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7F16F57C26C93A3C00CCDBDE /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		7F16F57F26C94AFD00CCDBDE /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		7F16F58126C94B4F00CCDBDE /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		7F16F58526C94C0200CCDBDE /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		7F23AFD526CD48D100CBAD03 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		7F3E4C4A26B7D70D00FA9690 /* DepartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCell.swift; sourceTree = "<group>"; };
 		7F3E4C4B26B7D70D00FA9690 /* DepartmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentCell.xib; sourceTree = "<group>"; };
 		7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		7F3E4C5226B9439900FA9690 /* DepartmentHeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentHeder.swift; sourceTree = "<group>"; };
 		7F3E4C5326B9439900FA9690 /* DepartmentHeder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentHeder.xib; sourceTree = "<group>"; };
+		7F3E4C5626B954EC00FA9690 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		7F3E4C5826B9550800FA9690 /* Department.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Department.storyboard; sourceTree = "<group>"; };
+		7F3E4C5A26B97E4C00FA9690 /* DepartmentImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentImageCell.swift; sourceTree = "<group>"; };
+		7F3E4C5B26B97E4C00FA9690 /* DepartmentImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentImageCell.xib; sourceTree = "<group>"; };
+		7F3E4C6026B985FE00FA9690 /* DepartmentNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentNameCell.swift; sourceTree = "<group>"; };
+		7F3E4C6126B985FE00FA9690 /* DepartmentNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentNameCell.xib; sourceTree = "<group>"; };
+		7F3E4C6426B9870F00FA9690 /* DepartmentDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDescriptionCell.swift; sourceTree = "<group>"; };
+		7F3E4C6526B9870F00FA9690 /* DepartmentDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentDescriptionCell.xib; sourceTree = "<group>"; };
+		7F3E4C6826B987CF00FA9690 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
+		7F3E4C6926B987CF00FA9690 /* TeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCell.xib; sourceTree = "<group>"; };
+		7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSectionHeader.swift; sourceTree = "<group>"; };
+		7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentSectionHeader.xib; sourceTree = "<group>"; };
+		7F44C2B326CBD76F0023C67B /* RestroomKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomKind.swift; sourceTree = "<group>"; };
+		7F70E4B726E22C3900335396 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		7F82E0AD26B2AB4F00EFF77D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7FA957BD26B2887600FCA82D /* Building7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Building7.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,11 +121,24 @@
 		7FA957E426B2887900FCA82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FA957F026B28D6E00FCA82D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7FA957F226B28D7A00FCA82D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		7FC6BEA326D5434B006F7122 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7FD7E3CD26CBFD1400CDDB48 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		7FD7E3CF26CBFD4100CDDB48 /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
+		7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorsLayoutKind.swift; sourceTree = "<group>"; };
+		7FDB743226CA8542007F1430 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7FDDC95426CE5F4700836AD5 /* Altimeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Altimeter.swift; sourceTree = "<group>"; };
+		7FE50C0A26D93D2200C6B561 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		7FE50C0E26D9580400C6B561 /* Building7URL.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Building7URL.plist; sourceTree = "<group>"; };
+		7FE50C1026D959EE00C6B561 /* PListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListManager.swift; sourceTree = "<group>"; };
+		7FE50C1426D95FB400C6B561 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7FE59E2826B2BCBC00738E81 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7FE59E2A26B30F2500738E81 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		7FE59E2C26B3153800738E81 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7FE59E2E26B3154A00738E81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7FE59E3126B315BF00738E81 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		7FF3A89E26E1E2B60053FB11 /* Building7API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building7API.swift; sourceTree = "<group>"; };
+		7FF3A8A026E1EB770053FB11 /* WeatherURL.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WeatherURL.plist; sourceTree = "<group>"; };
+		7FF3A8A326E1ECAD0053FB11 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +166,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F16F57426C9088100CCDBDE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7F16F57526C908B400CCDBDE /* NetworkManager.swift */,
+				7FE50C1026D959EE00C6B561 /* PListManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7F16F57726C9386200CCDBDE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */,
+				7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */,
+				7FDB743226CA8542007F1430 /* UIColor+Extension.swift */,
+				7F70E4B726E22C3900335396 /* UIAlertController+Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		7F16F57B26C93A1C00CCDBDE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7FD7E3CB26CBFCB300CDDB48 /* Building */,
+				7FD7E3CC26CBFCC700CDDB48 /* Weather */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		7F3E4C4826B7D6AC00FA9690 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				7FA957CB26B2887900FCA82D /* LaunchScreen.storyboard */,
 				7FA957F226B28D7A00FCA82D /* Login.storyboard */,
 				7FE59E2C26B3153800738E81 /* Home.storyboard */,
+				7F3E4C5826B9550800FA9690 /* Department.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -113,8 +209,8 @@
 		7F3E4C4926B7D6BC00FA9690 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				7F3E4C4A26B7D70D00FA9690 /* DepartmentCell.swift */,
-				7F3E4C4B26B7D70D00FA9690 /* DepartmentCell.xib */,
+				7F3E4C5E26B985CA00FA9690 /* Home */,
+				7F3E4C5F26B985D600FA9690 /* Department */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -122,10 +218,63 @@
 		7F3E4C5126B9432700FA9690 /* CollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E4C6C26B9A4C800FA9690 /* Home */,
+				7F3E4C6D26B9A4D300FA9690 /* Department */,
+			);
+			path = CollectionReusableView;
+			sourceTree = "<group>";
+		};
+		7F3E4C5E26B985CA00FA9690 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E4C4A26B7D70D00FA9690 /* DepartmentCell.swift */,
+				7F3E4C4B26B7D70D00FA9690 /* DepartmentCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7F3E4C5F26B985D600FA9690 /* Department */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E4C5A26B97E4C00FA9690 /* DepartmentImageCell.swift */,
+				7F3E4C5B26B97E4C00FA9690 /* DepartmentImageCell.xib */,
+				7F3E4C6026B985FE00FA9690 /* DepartmentNameCell.swift */,
+				7F3E4C6126B985FE00FA9690 /* DepartmentNameCell.xib */,
+				7F3E4C6426B9870F00FA9690 /* DepartmentDescriptionCell.swift */,
+				7F3E4C6526B9870F00FA9690 /* DepartmentDescriptionCell.xib */,
+				7F3E4C6826B987CF00FA9690 /* TeacherCell.swift */,
+				7F3E4C6926B987CF00FA9690 /* TeacherCell.xib */,
+			);
+			path = Department;
+			sourceTree = "<group>";
+		};
+		7F3E4C6C26B9A4C800FA9690 /* Home */ = {
+			isa = PBXGroup;
+			children = (
 				7F3E4C5226B9439900FA9690 /* DepartmentHeder.swift */,
 				7F3E4C5326B9439900FA9690 /* DepartmentHeder.xib */,
 			);
-			path = CollectionReusableView;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7F3E4C6D26B9A4D300FA9690 /* Department */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E4C7626BADD9600FA9690 /* DepartmentSectionHeader.swift */,
+				7F3E4C7726BADD9600FA9690 /* DepartmentSectionHeader.xib */,
+			);
+			path = Department;
+			sourceTree = "<group>";
+		};
+		7F3E4C8026BAE9C900FA9690 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7FE59E2A26B30F2500738E81 /* Auth.swift */,
+				7FC6BEA326D5434B006F7122 /* Location.swift */,
+				7FDDC95426CE5F4700836AD5 /* Altimeter.swift */,
+				7F23AFD526CD48D100CBAD03 /* Building.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		7F82E0AC26B2AB2600EFF77D /* Utility */ = {
@@ -133,6 +282,8 @@
 			children = (
 				7F82E0AD26B2AB4F00EFF77D /* Color.swift */,
 				7FE59E2826B2BCBC00738E81 /* Alert.swift */,
+				7FDB743026CA62DB007F1430 /* FloorsLayoutKind.swift */,
+				7F44C2B326CBD76F0023C67B /* RestroomKind.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -140,8 +291,7 @@
 		7F82E0AF26B2ACCA00EFF77D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7F82E0B026B2ACE700EFF77D /* UIButton+Extension.swift */,
-				7F3E4C4F26B7DD9E00FA9690 /* UICollectionView+Extension.swift */,
+				7F16F57726C9386200CCDBDE /* UIKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -178,6 +328,8 @@
 				7FA957F526B28F7000FCA82D /* Controller */,
 				7FA957C926B2887900FCA82D /* Assets.xcassets */,
 				7FA957CE26B2887900FCA82D /* Info.plist */,
+				7FE50C0E26D9580400C6B561 /* Building7URL.plist */,
+				7FF3A8A026E1EB770053FB11 /* WeatherURL.plist */,
 			);
 			path = Building7;
 			sourceTree = "<group>";
@@ -214,6 +366,7 @@
 			children = (
 				7FA957F026B28D6E00FCA82D /* LoginViewController.swift */,
 				7FE59E2E26B3154A00738E81 /* HomeViewController.swift */,
+				7F3E4C5626B954EC00FA9690 /* DepartmentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,10 +381,42 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7FD7E3CB26CBFCB300CDDB48 /* Building */ = {
+			isa = PBXGroup;
+			children = (
+				7F16F57C26C93A3C00CCDBDE /* Password.swift */,
+				7F16F57F26C94AFD00CCDBDE /* Floor.swift */,
+				7F16F58126C94B4F00CCDBDE /* Department.swift */,
+				7F16F58526C94C0200CCDBDE /* Teacher.swift */,
+			);
+			path = Building;
+			sourceTree = "<group>";
+		};
+		7FD7E3CC26CBFCC700CDDB48 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				7FD7E3CD26CBFD1400CDDB48 /* Weather.swift */,
+				7FD7E3CF26CBFD4100CDDB48 /* Current.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		7FE50C0926D93CE800C6B561 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7FE50C0A26D93D2200C6B561 /* NetworkError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		7FE59E2526B2B7DB00738E81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7FE59E2A26B30F2500738E81 /* Auth.swift */,
+				7FF3A8A226E1EC850053FB11 /* API */,
+				7F16F57B26C93A1C00CCDBDE /* Entity */,
+				7F16F57426C9088100CCDBDE /* Manager */,
+				7F3E4C8026BAE9C900FA9690 /* Logic */,
+				7FE50C0926D93CE800C6B561 /* Error */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,8 +425,18 @@
 			isa = PBXGroup;
 			children = (
 				7FE59E3126B315BF00738E81 /* Reusable.swift */,
+				7FE50C1426D95FB400C6B561 /* Request.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7FF3A8A226E1EC850053FB11 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7FF3A89E26E1E2B60053FB11 /* Building7API.swift */,
+				7FF3A8A326E1ECAD0053FB11 /* WeatherAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,11 +543,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3E4C4D26B7D70D00FA9690 /* DepartmentCell.xib in Resources */,
+				7FF3A8A126E1EB770053FB11 /* WeatherURL.plist in Resources */,
 				7FA957CD26B2887900FCA82D /* LaunchScreen.storyboard in Resources */,
 				7F3E4C5526B9439900FA9690 /* DepartmentHeder.xib in Resources */,
+				7F3E4C5926B9550800FA9690 /* Department.storyboard in Resources */,
+				7F3E4C6326B985FE00FA9690 /* DepartmentNameCell.xib in Resources */,
 				7FA957CA26B2887900FCA82D /* Assets.xcassets in Resources */,
+				7F3E4C7926BADD9600FA9690 /* DepartmentSectionHeader.xib in Resources */,
+				7FE50C0F26D9580400C6B561 /* Building7URL.plist in Resources */,
+				7F3E4C6726B9870F00FA9690 /* DepartmentDescriptionCell.xib in Resources */,
 				7FA957F326B28D7A00FCA82D /* Login.storyboard in Resources */,
 				7FE59E2D26B3153800738E81 /* Home.storyboard in Resources */,
+				7F3E4C6B26B987CF00FA9690 /* TeacherCell.xib in Resources */,
+				7F3E4C5D26B97E4C00FA9690 /* DepartmentImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,17 +581,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FA957F126B28D6E00FCA82D /* LoginViewController.swift in Sources */,
+				7FC6BEA426D5434B006F7122 /* Location.swift in Sources */,
+				7F16F58026C94AFD00CCDBDE /* Floor.swift in Sources */,
 				7F3E4C5026B7DD9E00FA9690 /* UICollectionView+Extension.swift in Sources */,
+				7F3E4C6626B9870F00FA9690 /* DepartmentDescriptionCell.swift in Sources */,
+				7F16F58626C94C0200CCDBDE /* Teacher.swift in Sources */,
 				7F82E0AE26B2AB4F00EFF77D /* Color.swift in Sources */,
+				7F70E4B826E22C3900335396 /* UIAlertController+Extension.swift in Sources */,
 				7FA957C126B2887600FCA82D /* AppDelegate.swift in Sources */,
+				7FE50C0B26D93D2200C6B561 /* NetworkError.swift in Sources */,
+				7FE50C1126D959EE00C6B561 /* PListManager.swift in Sources */,
 				7F3E4C5426B9439900FA9690 /* DepartmentHeder.swift in Sources */,
+				7FDB743126CA62DB007F1430 /* FloorsLayoutKind.swift in Sources */,
+				7F3E4C7826BADD9600FA9690 /* DepartmentSectionHeader.swift in Sources */,
+				7F3E4C5726B954EC00FA9690 /* DepartmentViewController.swift in Sources */,
 				7FE59E3226B315BF00738E81 /* Reusable.swift in Sources */,
 				7FE59E2F26B3154A00738E81 /* HomeViewController.swift in Sources */,
 				7F82E0B126B2ACE700EFF77D /* UIButton+Extension.swift in Sources */,
+				7FF3A8A426E1ECAD0053FB11 /* WeatherAPI.swift in Sources */,
 				7FA957C326B2887600FCA82D /* SceneDelegate.swift in Sources */,
+				7FDDC95526CE5F4700836AD5 /* Altimeter.swift in Sources */,
+				7FF3A89F26E1E2B60053FB11 /* Building7API.swift in Sources */,
+				7F16F57626C908B400CCDBDE /* NetworkManager.swift in Sources */,
 				7FE59E2926B2BCBC00738E81 /* Alert.swift in Sources */,
+				7FD7E3D026CBFD4100CDDB48 /* Current.swift in Sources */,
+				7FDB743326CA8542007F1430 /* UIColor+Extension.swift in Sources */,
+				7FE50C1526D95FB400C6B561 /* Request.swift in Sources */,
 				7FE59E2B26B30F2500738E81 /* Auth.swift in Sources */,
+				7FD7E3CE26CBFD1400CDDB48 /* Weather.swift in Sources */,
+				7F44C2B426CBD7700023C67B /* RestroomKind.swift in Sources */,
+				7F16F57D26C93A3C00CCDBDE /* Password.swift in Sources */,
 				7F3E4C4C26B7D70D00FA9690 /* DepartmentCell.swift in Sources */,
+				7F3E4C5C26B97E4C00FA9690 /* DepartmentImageCell.swift in Sources */,
+				7F23AFD626CD48D100CBAD03 /* Building.swift in Sources */,
+				7F3E4C6A26B987CF00FA9690 /* TeacherCell.swift in Sources */,
+				7F3E4C6226B985FE00FA9690 /* DepartmentNameCell.swift in Sources */,
+				7F16F58226C94B4F00CCDBDE /* Department.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +787,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZV473SPTS;
 				INFOPLIST_FILE = Building7/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,7 +795,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.20cm0123.Building7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -578,6 +807,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZV473SPTS;
 				INFOPLIST_FILE = Building7/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,7 +815,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.20cm0123.Building7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

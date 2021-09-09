@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DepartmentImageCell" id="gTV-IL-0wX" customClass="DepartmentImageCell" customModule="Building7" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="293"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="293"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZw-HC-Imu">
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="293"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBD-JZ-FY3">
+                                <rect key="frame" x="0.0" y="0.0" width="345" height="205"/>
+                                <color key="backgroundColor" red="0.58823529411764708" green="0.31764705882352939" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobile_phone_application_department" translatesAutoresizingMaskIntoConstraints="NO" id="mj6-Xl-KbE">
+                                <rect key="frame" x="90.5" y="58.5" width="234.5" height="234.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mj6-Xl-KbE" secondAttribute="height" multiplier="1:1" id="3AY-oj-Ulv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mj6-Xl-KbE" firstAttribute="height" secondItem="yZw-HC-Imu" secondAttribute="height" multiplier="0.8" id="73i-Zf-mE9"/>
+                            <constraint firstItem="VBD-JZ-FY3" firstAttribute="height" secondItem="yZw-HC-Imu" secondAttribute="height" multiplier="0.7" id="LEa-7y-agb"/>
+                            <constraint firstAttribute="bottom" secondItem="mj6-Xl-KbE" secondAttribute="bottom" id="R5O-Sr-CpU"/>
+                            <constraint firstItem="VBD-JZ-FY3" firstAttribute="leading" secondItem="yZw-HC-Imu" secondAttribute="leading" id="TO0-Wz-qBW"/>
+                            <constraint firstAttribute="trailing" secondItem="VBD-JZ-FY3" secondAttribute="trailing" id="nbT-tu-Wjh"/>
+                            <constraint firstAttribute="trailing" secondItem="mj6-Xl-KbE" secondAttribute="trailing" constant="20" id="oVR-Qd-tx7"/>
+                            <constraint firstItem="VBD-JZ-FY3" firstAttribute="top" secondItem="yZw-HC-Imu" secondAttribute="top" id="t1g-4a-VCL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="rS3-sY-6o2"/>
+            <constraints>
+                <constraint firstItem="yZw-HC-Imu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="008-hs-DYK"/>
+                <constraint firstAttribute="bottom" secondItem="yZw-HC-Imu" secondAttribute="bottom" id="1CW-TM-Znr"/>
+                <constraint firstAttribute="bottom" secondItem="yZw-HC-Imu" secondAttribute="bottom" id="CSR-EC-ggZ"/>
+                <constraint firstItem="yZw-HC-Imu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Qvk-el-wEv"/>
+                <constraint firstAttribute="bottom" secondItem="yZw-HC-Imu" secondAttribute="bottom" id="XL9-RT-LHd"/>
+                <constraint firstAttribute="trailing" secondItem="yZw-HC-Imu" secondAttribute="trailing" id="eBm-TZ-Rmc"/>
+            </constraints>
+            <size key="customSize" width="345" height="293"/>
+            <connections>
+                <outlet property="backView" destination="VBD-JZ-FY3" id="1SB-M5-B7F"/>
+                <outlet property="departmentImageView" destination="mj6-Xl-KbE" id="t0w-BD-GVe"/>
+            </connections>
+            <point key="canvasLocation" x="351.44927536231887" y="65.290178571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="mobile_phone_application_department" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
